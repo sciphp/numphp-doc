@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<reference xml:id="ref.indexing">
+<title>Indexing</title>
+
+<!-- chapters -->
+<refsect1 role="chapter">
+
+  <!-- Definition -->
+  <title>Introduction</title>
+  <para>
+    Slicing and indexing are elegant ways to access and affect some 
+    subsets of a matrix. In PHP, it is not a native capability, 
+    therefore, <link linkend="ref.ndarray">NdArrays</link> 
+    can be indexed using a string such as 
+    <code>',-1'</code> (last column) or <code>'-1'</code> (last line).
+  </para>
+
+  <para>
+    An interesting property of indexes is to have a scalar key
+    to address a multidimensional array.
+    For example, in PHP, accessing a three levels array would seem like
+     <code>$m[0][0][0]</code>.
+    With indexes, it would be <code>$m['1,1,1']</code>.
+  </para>
+
+  <para>
+    Several ways of using indexes are outlined below.
+  </para>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  <title>Available characters</title>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><code>integers</code></term>
+        <listitem>
+          <para>
+            A single integer points to one row or one col.
+            2 integers separated by a <code>:</code> points 
+            to a range of rows or columns.
+          </para>
+          <para>
+            Matrix are indexed from 1 to n. 
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><code>:</code></term>
+        <listitem>
+          It separates starting index and stopping one. <code>1:2</code>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><code>,</code></term>
+        <listitem>
+          It is the dimension separator.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- Examples -->
+<refsect1>
+  <title>Examples</title>
+  <para>A default 4x4 matrix will be used for demos.</para>
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 16, 16)->reshape(4, 4);
+
+echo "m\n$m";
+]]>
+  </programlisting>
+  <screen>
+<![CDATA[
+m
+[[1   2   3   4 ]
+ [5   6   7   8 ]
+ [9   10  11  12]
+ [13  14  15  16]]
+]]>
+  </screen>
+
+  <!-- Extract/vector -->
+  <example>
+    <title>Extracting vectors</title>
+    <programlisting role="php">
+<![CDATA[
+
+$row = $m['2'];
+$column = $m[',2'];
+
+echo "row\n$row", "column\n$column";
+]]>
+    </programlisting>
+    &example.outputs;
+    <screen>
+<![CDATA[
+row
+[5  6  7  8]
+column
+[2   6   10  14]
+]]>
+    </screen>
+  </example>
+
+
+  <!-- 2 last columns -->
+  <example>
+    <title>Extract 2 last columns.</title>
+    <programlisting role="php">
+<![CDATA[
+
+$columns = $m[', -2:'];
+
+echo "columns\n$columns";
+]]>
+    </programlisting>
+    &example.outputs;
+    <screen>
+<![CDATA[
+columns
+[[3   4 ]
+ [7   8 ]
+ [11  12]
+ [15  16]]
+]]>
+    </screen>
+  </example>
+
+
+  <!-- Assigning -->
+  <example>
+    <title>Assign a value to an entire column.</title>
+    <programlisting role="php">
+<![CDATA[
+
+$m[', 2'] = 42;
+
+echo "m\n$m";
+]]>
+    </programlisting>
+    &example.outputs;
+    <screen>
+<![CDATA[
+m
+[[1   42  3   4 ]
+ [5   42  7   8 ]
+ [9   42  11  12]
+ [13  42  15  16]]
+]]>
+    </screen>
+  </example>
+
+
+  <!-- Assigning a double range-->
+  <example>
+    <title>Assign a value to the 4 central values.</title>
+    <programlisting role="php">
+<![CDATA[
+$m['2:3, 2:3'] = 0;
+
+echo "m\n$m";
+]]>
+    </programlisting>
+    &example.outputs;
+    <screen>
+<![CDATA[
+m
+[[1   2   3   4 ]
+ [5   0   0   8 ]
+ [9   0   0   12]
+ [13  14  15  16]]
+]]>
+    </screen>
+  </example>
+
+
+</refsect1>
+
+</reference>

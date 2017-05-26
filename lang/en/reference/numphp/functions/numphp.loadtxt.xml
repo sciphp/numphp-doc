@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.loadtxt">
+
+<refnamediv>
+  <refname>NumPhp::loadtxt</refname>
+  <refpurpose>Load data from a text file.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::loadtxt</methodname>
+    <methodparam><type>&string.type;</type><parameter>file</parameter></methodparam>
+    <methodparam><type>&array.type;</type><parameter>options</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>file</parameter></term>
+        <listitem>
+          &string.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>options</parameter></term>
+        <listitem>
+          Defaults
+          <screen>
+[
+  'headers'   => false,
+  'delimiter' => ';'
+]
+          </screen>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Loading a matrix from a CSV file</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+// Load a matrix from a CSV file
+$m = np::loadtxt('test/data.csv');
+
+// Construct a Vandermonde matrix
+$n = np::diagonal($m)->vander();
+
+// Dot them
+$r = $m->dot($n);
+
+echo "m\n$m", "n\n$n", "r\n$r";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[7     0.27  0.36]
+ [6.3   0.3   0.34]
+ [8.1   0.28  0.4 ]]
+n
+[[49    7     1   ]
+ [0.09  0.3   1   ]
+ [0.16  0.4   1   ]]
+r
+[[343.0819  49.225    7.63    ]
+ [308.7814  44.326    6.94    ]
+ [396.9892  56.944    8.78    ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::dot</function></member>
+      <member><function>NumPhp::vander</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

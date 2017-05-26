@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.diag">
+
+<refnamediv>
+  <refname>NumPhp::diag</refname>
+  <refpurpose>Extract a diagonal or construct a diagonal array.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::diag</methodname>
+    <methodparam><type>mixed</type><parameter>array</parameter></methodparam>
+    <methodparam><type>int</type><parameter>k = 0</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+    If parameter is a 1D array (NdArray or a PHP array), it is taken as a diagonal
+    to create a n*n matrix.
+    If parameter is a 2D array, its diagonal is extracted. 
+  </para>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>array</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>k</parameter></term>
+        <listitem>
+          Default value is 0. Diagonal offset.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Extracting diagonals</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+// Construct a 3*3 matrix
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+// Extract default diagonal
+$diagonal = np::diag($m);
+
+// Extract diagonal with offset 1
+$diagonalPosOffset = np::diag($m, 1);
+
+// Extract diagonal with offset -1
+$diagonalNegOffset = np::diag($m, -1);
+
+echo "
+Matrix:
+$m
+Diagonal:
+$diagonal
+Diagonal with offset=1:
+$diagonalPosOffset
+Diagonal with offset=-1:
+$diagonalNegOffset
+";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+Matrix:
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+
+Diagonal:
+[1  5  9]
+
+Diagonal with offset=1:
+[2  6]
+
+Diagonal with offset=-1:
+[4  8]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Construct a diagonal array</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+// Construct a 3*3 matrix
+$m3x3 = np::diag([1, 2, 3]);
+
+// Construct a 3*4 matrix
+$m3x4 = np::diag([1, 2, 3], 1);
+
+// Construct a 4*3 matrix
+$m4x3 = np::diag([1, 2, 3], -1);
+
+echo "
+Matrix 3*3:
+$m3x3
+Matrix 3*4:
+$m3x4
+Matrix 4*3:
+$m4x3
+";
+
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+Matrix 3*3:
+[[1  0  0]
+ [0  2  0]
+ [0  0  3]]
+
+Matrix 3*4:
+[[0  1  0  0]
+ [0  0  2  0]
+ [0  0  0  3]]
+
+Matrix 4*3:
+[[0  0  0]
+ [1  0  0]
+ [0  2  0]
+ [0  0  3]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::diagflat</function></member>
+      <member><function>NumPhp::eye</function></member>
+      <member><function>NumPhp::identity</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

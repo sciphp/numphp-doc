@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.eye">
+
+<refnamediv>
+  <refname>NumPhp::eye</refname>
+  <refpurpose>Construct a 2-D array with ones on the diagonal and zeros elsewhere.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::eye</methodname>
+    <methodparam><type>int</type><parameter>rows</parameter></methodparam>
+    <methodparam choice="opt"><type>int</type><parameter>cols = 0</parameter></methodparam>
+    <methodparam choice="opt"><type>int</type><parameter>k = 0</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>rows</parameter></term>
+        <listitem>
+          &positive.int.function.parameters; Represents number of rows.
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>cols</parameter></term>
+        <listitem>
+          &positive.int.function.parameters; Represents number of columns.
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>k</parameter></term>
+        <listitem>
+          Default value is 0. It's an offset.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Constructing a 4x4 identity matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::eye(4);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  0  0  0]
+ [0  1  0  0]
+ [0  0  1  0]
+ [0  0  0  1]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Constructing a 3x5 matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::eye(3, 5);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  0  0  0  0]
+ [0  1  0  0  0]
+ [0  0  1  0  0]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Constructing a 3x5 matrix, offset=2</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::eye(3, 5, 2);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[0  0  1  0  0]
+ [0  0  0  1  0]
+ [0  0  0  0  1]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diag</function></member>
+      <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::identity</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

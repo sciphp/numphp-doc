@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.diagonal">
+
+<refnamediv>
+  <refname>NumPhp::diagonal</refname>
+  <refpurpose>Extract a diagonal.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::diagonal</methodname>
+    <methodparam><type>mixed</type><parameter>array</parameter></methodparam>
+    <methodparam><type>int</type><parameter>k = 0</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>array</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>k</parameter></term>
+        <listitem>
+          Default value is 0. It's an offset.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Extracting diagonals</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+// Construct a 3*3 matrix
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+// Extract default diagonal
+$diagonal = np::diagonal($m);
+
+// Extract diagonal with offset 1
+$diagonalPosOffset = np::diagonal($m, 1);
+
+// Extract diagonal with offset -1
+$diagonalNegOffset = np::diagonal($m, -1);
+
+echo "
+Matrix:
+$m
+Diagonal:
+$diagonal
+Diagonal with offset=1:
+$diagonalPosOffset
+Diagonal with offset=-1:
+$diagonalNegOffset
+";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+Matrix:
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+
+Diagonal:
+[1  5  9]
+
+Diagonal with offset=1:
+[2  6]
+
+Diagonal with offset=-1:
+[4  8]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diag</function></member>
+      <member><function>NumPhp::eye</function></member>
+      <member><function>NumPhp::identity</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.arange">
+
+<refnamediv>
+  <refname>NumPhp::arange</refname>
+  <refpurpose>Create a range of values based on a step.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::arange</methodname>
+    <methodparam><type>mixed</type><parameter>start</parameter></methodparam>
+    <methodparam choice="opt"><type>mixed</type><parameter>stop</parameter></methodparam>
+    <methodparam choice="opt"><type>mixed</type><parameter>step = 1</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+      This range does not contain the maximum value.
+  </para>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>start</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>stop</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>step</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Creating a range of integers</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::arange(1, 5);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[1  2  3  4]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Creating a range with a short call</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x1 = np::arange(5);
+$x2 = np::arange(-5);
+
+echo "x1\n$x1", "x2\n$x2";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x1
+[0  1  2  3  4]
+x2
+[-5  -4  -3  -2  -1]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Creating a range of float numbers</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::arange(1, 2, 0.2);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[1    1.2  1.4  1.6  1.8]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Creating a decreasing range of float numbers</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::arange(2, 1, 0.2);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[2    1.8  1.6  1.4  1.2]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::linspace</function></member>
+      <member><function>NumPhp::logspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

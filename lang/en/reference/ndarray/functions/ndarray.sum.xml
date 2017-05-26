@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.sum">
+
+<refnamediv>
+  <refname>NdArray::sum</refname>
+  <refpurpose>Sum all elements.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &mixed.number.type;<methodname>NdArray::sum</methodname>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &number.function.parameters;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Sum a square matrix</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+$s = $m->sum();
+
+echo "m\n$m", "s=sum(m)\n$s";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+s=sum(m)
+45
+]]>
+      </screen>
+    </example>
+   </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

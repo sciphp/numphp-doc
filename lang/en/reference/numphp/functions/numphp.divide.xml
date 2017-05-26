@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.divide">
+
+<refnamediv>
+  <refname>NumPhp::divide</refname>
+  <refpurpose>Divide two matrices, element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::divide</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>n</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>n</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Divide all elements by lambda</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::vander([1, 2, 3]);
+
+$d = np::divide($m, 2);
+
+echo "m\n$m", "d=m/2\n$d";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  1  1]
+ [4  2  1]
+ [9  3  1]]
+d=m/2
+[[0.5  0.5  0.5]
+ [2    1    0.5]
+ [4.5  1.5  0.5]]
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Divide two square matrices</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::arange(0, 18, 2)->reshape(3, 3);
+$n = np::vander([1, 2, 4]);
+
+$d = np::divide($m, $n);
+
+echo "m\n$m", "n\n$n", "d=m/n\n$d";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[0   2   4 ]
+ [6   8   10]
+ [12  14  16]]
+n
+[[1   1   1 ]
+ [4   2   1 ]
+ [16  4   1 ]]
+d=m/n
+[[0     2     4   ]
+ [1.5   4     10  ]
+ [0.75  3.5   16  ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::add</function></member>
+      <member><function>NumPhp::dot</function></member>
+      <member><function>NumPhp::multiply</function></member>
+      <member><function>NumPhp::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

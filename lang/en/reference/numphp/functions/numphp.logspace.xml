@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.logspace">
+
+<refnamediv>
+  <refname>NumPhp::logspace</refname>
+  <refpurpose>Create a logarithmic range with a defined number of values.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::logspace</methodname>
+    <methodparam><type>mixed</type><parameter>start</parameter></methodparam>
+    <methodparam><type>mixed</type><parameter>stop</parameter></methodparam>
+    <methodparam choice="opt"><type>int</type><parameter>num = 50</parameter></methodparam>
+    <methodparam choice="opt"><type>bool</type><parameter>endpoint = true</parameter></methodparam>
+    <methodparam choice="opt"><type>mixed</type><parameter>base = 10</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>start</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>stop</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>num</parameter></term>
+        <listitem>&int.function.parameters; The number of values</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>endpoint</parameter></term>
+        <listitem>&bool.function.parameters; If True, $base ** $stop is the last element. Otherwise, it is not included. Default is True.</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>base</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>A range of 4 values including endpoint, in default base 10</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::logspace(2, 5, 4);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[100     1000    10000   100000]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>A decreasing range of 4 values including endpoint, in default base 10</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::logspace(5, 2, 4);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[100000  10000   1000    100   ]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>A range of 4 values excluding endpoint, in default base 10</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::logspace(2, 5, 4, false);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[100              562.34132519035  3162.2776601684  17782.794100389]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>A range of 4 values including endpoint, in base 2</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::logspace(2, 5, 4, true, 2);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[4   8   16  32]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::arange</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

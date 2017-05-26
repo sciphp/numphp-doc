@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.data">
+
+<refnamediv>
+  <refname>NdArray::data</refname>
+  <refpurpose>Access data as a PHP array.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <attributesynopsis>
+    &array.type;<attributename>NdArray::data</attributename>
+  </attributesynopsis>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &array.return;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Get the data</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3)->power(2);
+
+$d = $m->data;
+
+echo "m\n$m", "data\n" . print_r($d, true);
+
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[2    4    8  ]
+ [16   32   64 ]
+ [128  256  512]]
+data
+Array
+(
+    [0] => Array
+        (
+            [0] => 2
+            [1] => 4
+            [2] => 8
+        )
+    [1] => Array
+        (
+            [0] => 16
+            [1] => 32
+            [2] => 64
+        )
+    [2] => Array
+        (
+            [0] => 128
+            [1] => 256
+            [2] => 512
+        )
+)
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><attribute>NdArray::ndim</attribute></member>
+      <member><attribute>NdArray::shape</attribute></member>
+      <member><attribute>NdArray::size</attribute></member>
+      <member><attribute>NdArray::T</attribute></member>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::negative</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

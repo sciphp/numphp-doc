@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- types -->
+<!ENTITY sciphp.ndarray.type '<link xmlns="http://docbook.org/ns/docbook" linkend="ref.ndarray"><type>SciPhp\NdArray</type></link>'>
+<!ENTITY mixed.array_ndarray.type '<para xmlns="http://docbook.org/ns/docbook">array|NdArray</para>'>
+<!ENTITY array.type '<type xmlns="http://docbook.org/ns/docbook">array</type>'>
+<!ENTITY string.type '<type xmlns="http://docbook.org/ns/docbook">string</type>'>
+<!ENTITY int.type '<type xmlns="http://docbook.org/ns/docbook">int</type>'>
+<!ENTITY mixed.number.type '<type xmlns="http://docbook.org/ns/docbook">float|int</type>'>
+
+
+<!-- parameters -->
+<!ENTITY mixed.tuple.function.parameters 'This parameter can be an array [1, 2, 3] or a tuple of integers (1, 2, 3).'>
+<!ENTITY shape.function.parameters 'An array [1, 2, 3] of integers which represents the shape of the created NdArray.'>
+<!ENTITY mixed.array_ndarray.function.parameters 'An array [1, 2, 3] or a NdArray.'>
+<!ENTITY array.function.parameters 'A PHP Array.'>
+<!ENTITY number.function.parameters 'A float or an integer.'>
+<!ENTITY int.function.parameters 'An integer.'>
+<!ENTITY string.function.parameters 'A string.'>
+<!ENTITY positive.int.function.parameters 'A positive integer.'>
+<!ENTITY bool.function.parameters 'A boolean.'>
+<!ENTITY multidimensional.array.function.parameters 'A multidimensional array of data.'>
+<!ENTITY axes.array.function.parameters 'A 1-dim array which represents axes.'>
+<!ENTITY no.function.parameters '<para xmlns="http://docbook.org/ns/docbook">This function has no parameters.</para>'>
+
+<!-- return -->
+<!ENTITY array.return 'A PHP array like [1, 2, 3]'>
+
+<!-- examples -->
+<!ENTITY example.outputs '<para xmlns="http://docbook.org/ns/docbook">The above example will output:</para>'>
+
+<!ENTITY examples.outputs '<para xmlns="http://docbook.org/ns/docbook">The above examples will output:</para>'>
+
+<!ENTITY examples.outputs.similar '<para xmlns="http://docbook.org/ns/docbook">The above examples will output
+something similar to:</para>'>
+
+<!-- Returns -->
+
+<!ENTITY return.falseforfailure ' or &false; on failure'>
+<!ENTITY return.falseforfailure.style.procedural '&style.procedural; returns &false; on failure.'>
+<!ENTITY return.success 'Returns &true; on success&return.falseforfailure;.'>
+<!ENTITY return.void 'No value is returned.'>

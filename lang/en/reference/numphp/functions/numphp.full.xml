@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.full">
+
+<refnamediv>
+  <refname>NumPhp::full</refname>
+  <refpurpose>Create a new NdArray filled with a value</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::full</methodname>
+    <methodparam><type>array</type><parameter>shape</parameter></methodparam>
+    <methodparam><type>mixed</type><parameter>value</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>shape</parameter></term>
+        <listitem>
+          &shape.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>value</parameter></term>
+        <listitem>
+          &number.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Creating a new NdArray</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::full([1, 2], 6);
+
+echo $x;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[6  6]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::ones</function></member>
+      <member><function>NumPhp::zeros</function></member>
+      <member><function>NumPhp::nulls</function></member>
+      <member><function>NumPhp::ones_like</function></member>
+      <member><function>NumPhp::zeros_like</function></member>
+      <member><function>NumPhp::nulls_like</function></member>
+      <member><function>NumPhp::full_like</function></member>
+      <member><function>NumPhp::eye</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

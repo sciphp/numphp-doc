@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.trapz">
+
+<refnamediv>
+  <refname>NumPhp::trapz</refname>
+  <refpurpose>Integrate along the given axis using the composite trapezoidal rule.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &mixed.number.type;<methodname>NumPhp::trapz</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &mixed.number.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Integrate a range</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::arange(0, 5);
+
+$r = np::trapz($m);
+
+echo "m\n$m", "r\n$r";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[0  1  2  3  4]
+r
+8
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::prod</function></member>
+      <member><function>NumPhp::sum</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

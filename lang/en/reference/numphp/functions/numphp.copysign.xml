@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.copysign">
+
+<refnamediv>
+  <refname>NumPhp::copysign</refname>
+  <refpurpose>Change the sign of m-element to that of n-element, element-wise.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::copysign</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>n</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>n</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Construct a copysign array</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::ar([-5, 5, 5]);
+$n = np::ar([1, 0, -1]);
+
+$r = np::copysign($m, $n);
+
+echo "m\n$m", "n\n$n", "r\n$r";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[-5  5   5 ]
+n
+[1   0   -1]
+r
+[5   5   -5]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::signbit</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

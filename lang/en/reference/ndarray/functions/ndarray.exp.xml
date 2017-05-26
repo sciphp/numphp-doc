@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.exp">
+
+<refnamediv>
+  <refname>NdArray::exp</refname>
+  <refpurpose>Calculate the exponential of all elements in the array.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::exp</methodname>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    &no.function.parameters;
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Exponential of a vector</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::ar([0, 1, M_E])->exp();
+
+echo "m\n$m";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[1                2.718281828459   15.154262241479]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Exponential of a matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::diag([0, 1, 2, 3]);
+
+$r = $m->exp($m);
+
+echo "m\n$m", "r\n$r";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[0  0  0  0]
+ [0  1  0  0]
+ [0  0  2  0]
+ [0  0  0  3]]
+r
+[[1                1                1                1              ]
+ [1                2.718281828459   1                1              ]
+ [1                1                7.3890560989307  1              ]
+ [1                1                1                20.085536923188]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::exp2</function></member>
+      <member><function>NdArray::expm1</function></member>
+      <member><function>NdArray::log</function></member>
+      <member><function>NdArray::log2</function></member>
+      <member><function>NdArray::log10</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

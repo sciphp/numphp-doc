@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<reference xml:id="ref.exceptions">
+<title>Exceptions</title>
+
+<!-- chapters -->
+<refsect1 role="chapter">
+
+  <!-- Argument -->
+  <title>Invalid argument exception</title>
+  <para>
+  NumPhp raises an <code>InvalidArgumentException</code> when something goes wrong 
+  with a method call. A good practice is to catch them.
+  </para>
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+try
+{
+  $m = np::ar([1, 2, 3])->log(-1);
+}
+catch(\InvalidArgumentException $e)
+{
+  echo "{$e->getMessage()}\n";
+
+  exit(1);
+}
+]]>
+  </programlisting>
+  &example.outputs;
+  <screen>
+<![CDATA[
+Expected a value greater than 0. Got: -1
+]]>
+  </screen>
+
+  <!-- Attributes -->
+  <title>Invalid attribute exception</title>
+  <para>
+  NdArray raises an <code>SciPhp\Exception\InvalidAttributeException</code> 
+  when a call is made for an unexisting attribute.
+  </para>
+
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+use SciPhp\Exception\InvalidAttributeException;
+
+try
+{
+  $m = np::ar([1, 2, 3])->notExistingAttribute;
+}
+catch(InvalidAttributeException $e)
+{
+  echo "{$e->getMessage()}\n";
+
+  exit(1);
+}
+]]>
+  </programlisting>
+  &example.outputs;
+  <screen>
+<![CDATA[
+Attribute "notExistingAttribute" is not defined.
+]]>
+  </screen>
+
+</refsect1>
+
+</reference>

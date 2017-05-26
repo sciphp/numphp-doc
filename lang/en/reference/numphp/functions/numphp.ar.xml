@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.ar">
+
+<refnamediv>
+  <refname>NumPhp::ar</refname>
+  <refpurpose>Construct a new N-dimensional array</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::ar</methodname>
+    <methodparam><type>array</type><parameter>data</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+   NumPhp::ar() is an alias of NumPy.array() in Python.
+  </para>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>data</parameter></term>
+        <listitem>
+          &multidimensional.array.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Creating an array of rank 1 - A point or a vector</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+// x, y, z coordinates
+$x = np::ar([1, 2, 3]);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[1  2  3]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Creating an array of rank 2 - A matrix</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::ar([[1, 2], [3, 4]]);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  2]
+ [3  4]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diag</function></member>
+      <member><function>NumPhp::eye</function></member>
+      <member><function>NumPhp::identity</function></member>
+      <member><function>NumPhp::arange</function></member>
+      <member><function>NumPhp::ones</function></member>
+      <member><function>NumPhp::zeros</function></member>
+      <member><function>NumPhp::nulls</function></member>
+      <member><function>NumPhp::full</function></member>
+      <member><function>NumPhp::ones_like</function></member>
+      <member><function>NumPhp::zeros_like</function></member>
+      <member><function>NumPhp::nulls_like</function></member>
+      <member><function>NumPhp::full_like</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

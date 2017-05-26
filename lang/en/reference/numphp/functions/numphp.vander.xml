@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.vander">
+
+<refnamediv>
+  <refname>NumPhp::vander</refname>
+  <refpurpose>Generate a Vandermonde matrix.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::vander</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>matrix</parameter></methodparam>
+    <methodparam choice="opt"><type>int</type><parameter>num</parameter></methodparam>
+  </methodsynopsis>
+  <para>
+  The columns of the output matrix are powers of the input vector. 
+  </para>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>matrix</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters; &nbsp;
+          A 1-dim array
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>num</parameter></term>
+        <listitem>
+          &positive.int.function.parameters;
+          Number of columns to generate. If not specified, a 
+          square array is returned ($num = count($matrix)).
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Construct a square Vandermonde matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::vander([1, 2, 3, 4]);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1   1   1   1 ]
+ [8   4   2   1 ]
+ [27  9   3   1 ]
+ [64  16  4   1 ]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Construct a Vandermonde matrix with 3 columns</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::vander([1, 2, 3, 4], 3);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1   1   1 ]
+ [4   2   1 ]
+ [9   3   1 ]
+ [16  4   1 ]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Construct a Vandermonde matrix with 5 columns</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::vander([1, 2, 3], 5);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1   1   1   1   1 ]
+ [16  8   4   2   1 ]
+ [81  27  9   3   1 ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::tri</function></member>
+      <member><function>NumPhp::triu</function></member>
+      <member><function>NumPhp::tril</function></member>
+      <member><function>NumPhp::logspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

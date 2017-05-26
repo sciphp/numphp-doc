@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="ref.ndarray">
+<title>NdArray</title>
+
+
+<refsect1 role="chapter">
+  <!-- Attributes -->
+  <title>Attributes</title>
+  <para>
+    <simplelist>
+      <member><attribute>NdArray::data</attribute></member>
+      <member><attribute>NdArray::ndim</attribute></member>
+      <member><attribute>NdArray::shape</attribute></member>
+      <member><attribute>NdArray::size</attribute></member>
+      <member><attribute>NdArray::T</attribute></member>
+    </simplelist>
+  </para>
+
+  <!-- basics -->
+  &reftitle.array.basics;
+  <para>
+    <simplelist>
+      <member><function>NdArray::copy</function></member>
+      <member><function>NdArray::negative</function></member>
+    </simplelist>
+  </para>
+
+  <!-- shape manipulation -->
+  &reftitle.array.shape.manipulation;
+  <para>
+    <simplelist>
+      <member><function>NdArray::ravel</function></member>
+      <member><function>NdArray::reshape</function></member>
+      <member><function>NdArray::resize</function></member>
+    </simplelist>
+  </para>
+
+  <!-- arithmetic -->
+  &reftitle.array.arithmetic;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::power</function></member>
+      <member><function>NdArray::reciprocal</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+
+  <!-- Sums, products, differences -->
+  <title>Sums, products, differences</title>
+  <para>
+    <simplelist>
+      <member><function>NdArray::prod</function></member>
+      <member><function>NdArray::sum</function></member>
+      <member><function>NdArray::trace</function></member>
+      <member><function>NdArray::trapz</function></member>
+    </simplelist>
+  </para>
+
+  <title>Logarithms</title>
+  <para>
+    <simplelist>
+      <member><function>NdArray::log</function></member>
+      <member><function>NdArray::log10</function></member>
+      <member><function>NdArray::log2</function></member>
+    </simplelist>
+  </para>
+
+  <title>Exponents</title>
+  <para>
+    <simplelist>
+      <member><function>NdArray::exp</function></member>
+      <member><function>NdArray::expm1</function></member>
+      <member><function>NdArray::exp2</function></member>
+    </simplelist>
+  </para>
+
+  <!-- Triangle -->
+  <title>Triangle</title>
+  <para>
+    <simplelist>
+      <member><function>NdArray::tril</function></member>
+      <member><function>NdArray::triu</function></member>
+    </simplelist>
+  </para>
+
+  <!-- Floating point -->
+  <title>Floating point</title>
+  <para>
+    <simplelist>
+      <member><function>NdArray::copysign</function></member>
+      <member><function>NdArray::signbit</function></member>
+    </simplelist>
+  </para>
+
+  <!-- MISC -->
+  <title>Misc.</title>
+  <para>
+    <simplelist>
+      <member><function>NdArray::vander</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+
+</reference>

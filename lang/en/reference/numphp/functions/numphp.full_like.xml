@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.full_like">
+
+<refnamediv>
+  <refname>NumPhp::full_like</refname>
+  <refpurpose>Construct a new array of a given value with the same shape and type 
+  as a given array.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::full_like</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>array</parameter></methodparam>
+    <methodparam><type>&mixed.number.type;</type><parameter>value</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>array</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>value</parameter></term>
+        <listitem>
+          &number.function.parameters; 
+          <para>Although is is not recommanded, it is possible to specify an array.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Constructing an array of 42 with array as input</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::full_like(
+  [[2, 2],
+   [2, 2]], 42
+);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[42  42]
+ [42  42]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Constructing an array of 42 with N-dim array as input</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+// 3-D array 
+$input = np::linspace(1, 8, 8)->reshape(2, 2, 2);
+
+$x = np::full_like($input, 42);
+
+echo "
+Input:
+$input
+Output:
+$x
+";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+Input:
+[[[1  2]
+  [3  4]]
+ [[5  6]
+  [7  8]]]
+
+Output:
+[[[42  42]
+  [42  42]]
+ [[42  42]
+  [42  42]]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::full</function></member>
+      <member><function>NumPhp::nulls</function></member>
+      <member><function>NumPhp::nulls_like</function></member>
+      <member><function>NumPhp::ones</function></member>
+      <member><function>NumPhp::ones_like</function></member>
+      <member><function>NumPhp::zeros</function></member>
+      <member><function>NumPhp::zeros_like</function></member>
+      <member><function>NumPhp::eye</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

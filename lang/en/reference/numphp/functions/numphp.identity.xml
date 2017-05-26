@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.identity">
+
+<refnamediv>
+  <refname>NumPhp::identity</refname>
+  <refpurpose>Construct a square 2-D array with ones on the diagonal and zeros elsewhere.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::identity</methodname>
+    <methodparam><type>int</type><parameter>side</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>side</parameter></term>
+        <listitem>
+          &positive.int.function.parameters; Represents number of rows.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Constructing a 4x4 identity matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::identity(4);
+
+print $m;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  0  0  0]
+ [0  1  0  0]
+ [0  0  1  0]
+ [0  0  0  1]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diag</function></member>
+      <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::eye</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

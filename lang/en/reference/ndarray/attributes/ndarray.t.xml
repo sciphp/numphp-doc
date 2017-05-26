@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.T">
+
+<refnamediv>
+  <refname>NdArray::T</refname>
+  <refpurpose>Permute the dimensions of an array.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <attributesynopsis>
+    &sciphp.ndarray.type;<attributename>NdArray::T</attributename>
+  </attributesynopsis>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Get transposition of a square matrix</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+$t = $m->T;
+
+echo "m\n$m", "a=m->T\n$t";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+a=m->T
+[[1  4  7]
+ [2  5  8]
+ [3  6  9]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::negative</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

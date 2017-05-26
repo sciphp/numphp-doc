@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="index">
+ <title>&SciPhpManual;</title>
+ <para>Welcome on &SciPhpManual;</para>
+
+  <!-- chapters -->
+  <refsect1 role="chapter">
+
+    <!-- Getting started -->
+    <simplelist>
+      <member>&GettingStarted;</member>
+      <simplelist>
+        <member><link linkend="tutorial">Quick start</link></member>
+      </simplelist>
+    </simplelist>
+
+    <!-- API parts -->
+    <simplelist>
+      <member><link linkend="ref.exceptions">Exceptions</link></member>
+      <member><link linkend="ref.indexing">Indexing</link></member>
+      <member><link linkend="ref.ndarray">NdArray &Functions;</link></member>
+      <member><link linkend="ref.numphp">NumPhp &Functions;</link></member>
+    </simplelist>
+
+  </refsect1>
+
+</reference>

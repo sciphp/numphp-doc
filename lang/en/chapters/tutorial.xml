@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="tutorial">
+<title>Tutorial</title>
+
+<!-- chapters -->
+<refsect1 role="chapter">
+
+  <!-- Install -->
+  <title>Quick install</title>
+  <screen>
+<![CDATA[
+composer require sciphp/numphp
+]]>
+  </screen>
+
+  <!-- PHP File -->
+  <title>In a PHP file</title>
+  <programlisting role="php">
+<![CDATA[
+require "vendor/autoload.php";
+
+use SciPhp\NumPhp as np;
+]]>
+  </programlisting>
+
+  <!-- Matrix generation -->
+  <title>First matrix</title>
+  <para>Construct a matrix 3*3</para>
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+print "m\n$m";
+]]>
+  </programlisting>
+  <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+]]>
+  </screen>
+
+  <!-- Matrix addition -->
+  <title>Addition</title>
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 6, 6)->reshape(2, 3);
+
+$a = np::add($m, 6);
+
+echo "m\n$m", "a=m+6\n$a";
+]]>
+  </programlisting>
+  <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]]
+a=m+6
+[[7   8   9 ]
+ [10  11  12]]
+]]>
+  </screen>
+
+  <!-- Dot Matrices -->
+  <title>Dot matrices</title>
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+// Construct 2 matrices 3*3
+$m = np::vander([1, 2, 3]);
+$n = np::linspace(1, 9, 9)->reshape(3,3);
+
+$a = np::dot($m, $n);
+
+echo "m\n$m", "n\n$n", "a=m.n\n$a";
+]]>
+  </programlisting>
+  <screen>
+<![CDATA[
+m
+[[1  1  1]
+ [4  2  1]
+ [9  3  1]]
+n
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+a=m.n
+[[12  15  18]
+ [19  26  33]
+ [28  41  54]]
+]]>
+  </screen>
+
+  <!-- Chaining actions -->
+  <title>Chaining actions</title>
+  <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$triangle = np::vander([1, 2, 4])->reciprocal()->resize(4, 4)->tril();
+
+echo "triangle\n$triangle";
+]]>
+  </programlisting>
+  <screen>
+<![CDATA[
+triangle
+[[1       0       0       0     ]
+ [0.5     1       0       0     ]
+ [1       1       1       0     ]
+ [0.25    0.5     1       0.0625]]
+]]>
+  </screen>
+
+</refsect1>
+
+
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NumPhp::add</function></member>
+      <member><function>NumPhp::dot</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</reference>

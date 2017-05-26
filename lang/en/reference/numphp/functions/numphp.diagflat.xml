@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.diagflat">
+
+<refnamediv>
+  <refname>NumPhp::diagflat</refname>
+  <refpurpose>Create a two-dimensional array with the flattened input as a diagonal.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::diagflat</methodname>
+    <methodparam><type>mixed</type><parameter>array</parameter></methodparam>
+    <methodparam><type>int</type><parameter>k = 0</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>array</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>k</parameter></term>
+        <listitem>
+          Default value is 0. It's an offset.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Construct a diagonal array</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+// Construct a 2*2 matrix which will be flattened
+$x = np::linspace(1, 4, 4)->reshape(2, 2);
+
+// Construct a 4*4 matrix
+$m4x4 = np::diagflat($x);
+
+// Construct a 4*5 matrix
+$m4x5 = np::diagflat($x, 1);
+
+// Construct a 5*4 matrix
+$m5x4 = np::diagflat($x, -1);
+
+echo "
+Original x
+$x
+Matrix 4*4:
+$m4x4
+Matrix 4*5:
+$m4x5
+Matrix 5*4:
+$m5x4
+";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+Original x
+[[1  2]
+ [3  4]]
+
+Matrix 4*4:
+[[1  0  0  0]
+ [0  2  0  0]
+ [0  0  3  0]
+ [0  0  0  4]]
+
+Matrix 4*5:
+[[0  1  0  0  0]
+ [0  0  2  0  0]
+ [0  0  0  3  0]
+ [0  0  0  0  4]]
+
+Matrix 5*4:
+[[0  0  0  0]
+ [1  0  0  0]
+ [0  2  0  0]
+ [0  0  3  0]
+ [0  0  0  4]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::diag</function></member>
+      <member><function>NumPhp::eye</function></member>
+      <member><function>NumPhp::identity</function></member>
+      <member><function>NumPhp::linspace</function></member>
+      <member><function>NdArray::ravel</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

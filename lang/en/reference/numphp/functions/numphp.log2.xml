@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.log2">
+
+<refnamediv>
+  <refname>NumPhp::log2</refname>
+  <refpurpose>Return the base 2 logarithm, element-wise.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::log2</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Get base-2 logarithm of a vector</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::log2([1, 2, 4, 8]);
+
+echo "m\n$m";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[0  1  2  3]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Get base-2 logarithm of a matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::ar([1, 2, 4])->vander();
+
+$r = np::log2($m);
+
+echo "m\n$m", "r\n$r";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1   1   1 ]
+ [4   2   1 ]
+ [16  4   1 ]]
+r
+[[0  0  0]
+ [2  1  0]
+ [4  2  0]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::log</function></member>
+      <member><function>NumPhp::log10</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

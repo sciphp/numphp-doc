@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.dot">
+
+<refnamediv>
+  <refname>NumPhp::dot</refname>
+  <refpurpose>Dot product of two matrices.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::dot</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>n</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>n</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Product of 2 square matrices</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+$n = np::linspace(1, 9, 9)->reshape(3, 3);
+
+$p = np::dot($m, $n);
+
+echo "m=n\n$m", "p=m.n\n$p";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m=n
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+p=m.n
+[[30   36   42 ]
+ [66   81   96 ]
+ [102  126  150]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Product of non square matrices</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 6, 6)->reshape(2, 3);
+$n = np::linspace(1, 12, 12)->reshape(3, 4);
+
+$p = np::dot($m, $n);
+
+echo "m\n$m", "n\n$n", "p=m.n\n$p";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]]
+n
+[[1   2   3   4 ]
+ [5   6   7   8 ]
+ [9   10  11  12]]
+p=m.n
+[[38   44   50   56 ]
+ [83   98   113  128]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Product lamda . matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 6, 6)->reshape(2, 3);
+$n = 5;
+
+$p = np::dot($m, 5);
+
+echo "m\n$m", "p=m.5\n$p";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]]
+p=m.5
+[[5   10  15]
+ [20  25  30]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::add</function></member>
+      <member><function>NumPhp::divide</function></member>
+      <member><function>NumPhp::multiply</function></member>
+      <member><function>NumPhp::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

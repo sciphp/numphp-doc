@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.reshape">
+
+<refnamediv>
+  <refname>NdArray::reshape</refname>
+  <refpurpose>Reshape an array</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::reshape</methodname>
+    <methodparam><type>mixed</type><parameter>tuple</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>tuple</parameter></term>
+        <listitem>
+          &mixed.tuple.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Reshape a 2*3 matrix to 3*2</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+// Create a 2*3 matrix
+$x = np::linspace(1, 6, 6)->reshape(2, 3);
+
+$x->reshape(3, 2);
+
+echo $x;
+
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  2]
+ [3  4]
+ [5  6]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::ravel</function></member>
+      <member><function>NdArray::resize</function></member>
+      <member><function>NumPhp::arange</function></member>
+      <member><function>NumPhp::linspace</function></member>
+      <member><function>NumPhp::logspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

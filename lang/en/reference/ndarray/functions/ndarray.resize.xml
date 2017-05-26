@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.resize">
+
+<refnamediv>
+  <refname>NdArray::resize</refname>
+  <refpurpose>Resize an array</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::resize</methodname>
+    <methodparam><type>mixed</type><parameter>tuple</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>tuple</parameter></term>
+        <listitem>
+          &mixed.tuple.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Resize a range to a 3*3 matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::ar([1, 2, 3])->resize(3, 3);
+
+print $x;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  2  3]
+ [1  2  3]
+ [1  2  3]]
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Resize a 3*3 matrix to 2*2</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::ar([1, 2, 3])->resize(3, 3);
+
+print $x->resize(2, 2);
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  2]
+ [3  1]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::ravel</function></member>
+      <member><function>NdArray::reshape</function></member>
+      <member><function>NumPhp::arange</function></member>
+      <member><function>NumPhp::linspace</function></member>
+      <member><function>NumPhp::logspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

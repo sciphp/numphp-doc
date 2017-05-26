@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.subtract">
+
+<refnamediv>
+  <refname>NdArray::subtract</refname>
+  <refpurpose>Subtract two matrices element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::subtract</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>n</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>n</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Subtract 2 square matrices</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+$n = np::linspace(1, 9, 9)->reshape(3, 3);
+
+$s = $m->subtract($n);
+
+echo "m=n\n$m", "s=m-n\n$s";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m=n
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+s=m-n
+[[0  0  0]
+ [0  0  0]
+ [0  0  0]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Subtracting a vector and a matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 6, 6)->reshape(2, 3);
+$n = np::linspace(1, 3, 3);
+
+$s = $m->subtract($n);
+
+echo "m\n$m", "n\n$n", "s=m-n\n$s";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]]
+n
+[1  2  3]
+s=m-n
+[[0  0  0]
+ [3  3  3]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Addition of lamda and matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 6, 6)->reshape(2, 3);
+
+$s = $m->subtract(3);
+
+echo "m\n$m", "s=m-3\n$s";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]]
+s=m-3
+[[-2  -1  0 ]
+ [1   2   3 ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::multiply</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

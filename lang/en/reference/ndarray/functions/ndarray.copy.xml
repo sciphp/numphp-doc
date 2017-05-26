@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.copy">
+
+<refnamediv>
+  <refname>NdArray::copy</refname>
+  <refpurpose>Copy an array</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::copy</methodname>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Copy a matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::linspace(1, 6, 6)->resize(3, 3);
+$y = $x->copy()->resize(2, 6);
+
+echo "x\n$x", "y\n$y";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+[[1  2  3]
+ [4  5  6]
+ [1  2  3]]
+y
+[[1  2  3  4  5  6]
+ [1  2  3  1  2  3]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><attribute>NdArray::T</attribute></member>
+      <member><function>NdArray::ravel</function></member>
+      <member><function>NdArray::resize</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

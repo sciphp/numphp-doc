@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.ones_like">
+
+<refnamediv>
+  <refname>NumPhp::ones_like</refname>
+  <refpurpose>Construct a new array of ones with the same shape and type 
+  as a given array.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::ones_like</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>array</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>array</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Constructing an array of ones with array as input</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::ones_like(
+  [[2, 2],
+   [2, 2]]
+);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  1]
+ [1  1]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Constructing an array of ones with N-dim array as input</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+// 3-D array 
+$input = np::linspace(1, 8, 8)->reshape(2, 2, 2);
+
+$x = np::ones_like($input);
+
+echo "
+Input:
+$input
+Output:
+$x
+";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+Input:
+[[[1  2]
+  [3  4]]
+ [[5  6]
+  [7  8]]]
+
+Output:
+[[[1  1]
+  [1  1]]
+ [[1  1]
+  [1  1]]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::zeros</function></member>
+      <member><function>NumPhp::full</function></member>
+      <member><function>NumPhp::nulls</function></member>
+      <member><function>NumPhp::ones</function></member>
+      <member><function>NumPhp::zeros_like</function></member>
+      <member><function>NumPhp::nulls_like</function></member>
+      <member><function>NumPhp::full_like</function></member>
+      <member><function>NumPhp::eye</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

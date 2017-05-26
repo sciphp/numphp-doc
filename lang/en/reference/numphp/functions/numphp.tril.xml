@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.tril">
+
+<refnamediv>
+  <refname>NumPhp::tril</refname>
+  <refpurpose>Construct a triangle matrix based on the lower triangle of another one.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::tril</methodname>
+    <methodparam><type>&sciphp.ndarray.type;</type><parameter>matrix</parameter></methodparam>
+    <methodparam choice="opt"><type>int</type><parameter>k = 0</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>matrix</parameter></term>
+        <listitem>
+          &sciphp.ndarray.type; &nbsp;Initial matrix.
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>k</parameter></term>
+        <listitem>
+          Default value is 0. It's an offset.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Extract lower triangle with no offset</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::ar(
+  [[1, 2, 3],
+   [4, 5, 6],
+   [7, 8, 9]]
+);
+
+print np::tril($m);
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  0  0]
+ [4  5  0]
+ [7  8  9]]
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Extract lower triangle with offset -1</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = np::ar(
+  [[1, 2, 3],
+   [4, 5, 6],
+   [7, 8, 9]]
+);
+
+print np::tril($m, -1);
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[0  0  0]
+ [4  0  0]
+ [7  8  0]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::tri</function></member>
+      <member><function>NumPhp::triu</function></member>
+      <member><function>NumPhp::vander</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.multiply">
+
+<refnamediv>
+  <refname>NdArray::multiply</refname>
+  <refpurpose>Multiply two matrices, element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::multiply</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>n</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>n</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Multiply all elements by lambda</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::vander([1, 2, 3]);
+
+$r = $m->multiply(2);
+
+echo "m\n$m", "r=m*2\n$r";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  1  1]
+ [4  2  1]
+ [9  3  1]]
+d=m*2
+[[2   2   2 ]
+ [8   4   2 ]
+ [18  6   2 ]]
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Multiply two square matrices</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::arange(0, 18, 2)->reshape(3, 3);
+$n = np::vander([1, 2, 4]);
+
+$r = $m->multiply($n);
+
+echo "m\n$m", "n\n$n", "r=m*n\n$r";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[0   2   4 ]
+ [6   8   10]
+ [12  14  16]]
+n
+[[1   1   1 ]
+ [4   2   1 ]
+ [16  4   1 ]]
+r=m*n
+[[0    2    4  ]
+ [24   16   10 ]
+ [192  56   16 ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

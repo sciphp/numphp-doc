@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Part titles used mostly in manual.xml itself -->
+<!ENTITY SciPhpManual      "SciPhp Manual">
+<!ENTITY Seealso           "See also">
+<!ENTITY Date              "Date:">
+<!ENTITY GettingStarted    "Getting Started">
+<!ENTITY Installation      "Installation">
+<!ENTITY Features          "Features">
+<!ENTITY Version           "Version">
+<!ENTITY Description       "Description">
+<!ENTITY Default           "Default">
+<!ENTITY Definition        "Definition">
+<!ENTITY Functions         "Functions">
+<!ENTITY Name              "Name">
+<!ENTITY Alias             "Alias of">
+<!ENTITY Type              "Type">
+<!ENTITY Changelog         "Changelog">
+<!ENTITY Methods           "Methods">
+<!ENTITY Properties        "Properties">
+<!ENTITY Constants         "Constants">
+<!ENTITY NotAvailable      "Not Available">
+<!ENTITY LastModified      "This page was last modified on %s, at %s.">
+
+<!-- Formats -->
+<!ENTITY LastModifiedDateFormat      "l, d F Y">
+<!ENTITY LastModifiedTimeFormat      "H:i">
+
+<!-- To mark section titles -->
+<!ENTITY reftitle.changelog    '<title xmlns="http://docbook.org/ns/docbook">&Changelog;</title>'>
+<!ENTITY reftitle.classes      '<title xmlns="http://docbook.org/ns/docbook">Predefined Classes</title>'>
+<!ENTITY reftitle.classsynopsis '<title xmlns="http://docbook.org/ns/docbook">Class synopsis</title>'>
+<!ENTITY reftitle.constants    '<title xmlns="http://docbook.org/ns/docbook">Predefined Constants</title>'>
+<!ENTITY reftitle.constructor  '<title xmlns="http://docbook.org/ns/docbook">Constructor</title>'>
+<!ENTITY reftitle.description  '<title xmlns="http://docbook.org/ns/docbook">Description</title>'>
+<!ENTITY reftitle.examples     '<title xmlns="http://docbook.org/ns/docbook">Examples</title>'>
+<!ENTITY reftitle.exceptions   '<title xmlns="http://docbook.org/ns/docbook">Exceptions</title>'>
+<!ENTITY reftitle.errors       '<title xmlns="http://docbook.org/ns/docbook">Errors/Exceptions</title>'>
+<!ENTITY reftitle.install      '<title xmlns="http://docbook.org/ns/docbook">Installation</title>'>
+<!ENTITY reftitle.intro        '<title xmlns="http://docbook.org/ns/docbook">Introduction</title>'>
+<!ENTITY reftitle.methods      '<title xmlns="http://docbook.org/ns/docbook">Methods</title>'>
+<!ENTITY reftitle.notes        '<title xmlns="http://docbook.org/ns/docbook">Notes</title>'>
+<!ENTITY reftitle.parameters   '<title xmlns="http://docbook.org/ns/docbook">Parameters</title>'>
+<!ENTITY reftitle.options      '<title xmlns="http://docbook.org/ns/docbook">Options</title>'>
+<!ENTITY reftitle.properties   '<title xmlns="http://docbook.org/ns/docbook">Properties</title>'>
+<!ENTITY reftitle.required     '<title xmlns="http://docbook.org/ns/docbook">Requirements</title>'>
+<!ENTITY reftitle.runtime      '<title xmlns="http://docbook.org/ns/docbook">Runtime Configuration</title>'>
+<!ENTITY reftitle.returnvalues '<title xmlns="http://docbook.org/ns/docbook">Return Values</title>'>
+<!ENTITY reftitle.seealso      '<title xmlns="http://docbook.org/ns/docbook">See Also</title>'>
+<!ENTITY reftitle.setup        '<title xmlns="http://docbook.org/ns/docbook">Installing/Configuring</title>'>
+<!ENTITY reftitle.usage        '<title xmlns="http://docbook.org/ns/docbook">Usage</title>'>
+
+<!ENTITY reftitle.array.creation '<title xmlns="http://docbook.org/ns/docbook">Array creation</title>'>
+<!ENTITY reftitle.array.range '<title xmlns="http://docbook.org/ns/docbook">Range methods</title>'>
+<!ENTITY reftitle.array.shape.manipulation '<title xmlns="http://docbook.org/ns/docbook">Shape manipulation</title>'>
+<!ENTITY reftitle.array.basics '<title xmlns="http://docbook.org/ns/docbook">Array basics</title>'>
+<!ENTITY reftitle.array.arithmetic '<title xmlns="http://docbook.org/ns/docbook">Arithmetic</title>'>

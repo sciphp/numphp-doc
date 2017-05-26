@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.ones">
+
+<refnamediv>
+  <refname>NumPhp::ones</refname>
+  <refpurpose>Create a new NdArray filled with ones</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::ones</methodname>
+    <methodparam><type>mixed</type><parameter>tuple</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>tuple</parameter></term>
+        <listitem>
+          &mixed.tuple.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Creating a new NdArray based on a shape</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::ones([2, 2]);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[1  1]
+ [1  1]]
+
+]]>
+      </screen>
+    </example>
+    <example>
+      <title>Creating a new NdArray based on a tuple</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$x = np::ones(3, 3, 3);
+
+echo $x;
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[[1  1  1]
+  [1  1  1]
+  [1  1  1]]
+ [[1  1  1]
+  [1  1  1]
+  [1  1  1]]
+ [[1  1  1]
+  [1  1  1]
+  [1  1  1]]]
+
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::zeros</function></member>
+      <member><function>NumPhp::full</function></member>
+      <member><function>NumPhp::nulls</function></member>
+      <member><function>NumPhp::ones_like</function></member>
+      <member><function>NumPhp::zeros_like</function></member>
+      <member><function>NumPhp::nulls_like</function></member>
+      <member><function>NumPhp::full_like</function></member>
+      <member><function>NumPhp::eye</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
