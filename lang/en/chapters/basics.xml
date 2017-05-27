@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="basics">
+  <title>Basics</title>
+
+<!-- chapters -->
+<refsect1 role="chapter">
+
+  <!-- Matrix representation -->
+  <title>Matrix representation</title>
+  <para>
+  In PHP,  a matrix 2x2 is stored as a nested 2-levels array. 
+  </para>
+
+  <programlisting role="php"><![CDATA[
+$matrix = 
+[[ 1, 0, 0 ],
+ [ 0, 1, 0 ],
+ [ 0, 0, 1 ]];
+
+// OR
+$matrix = 
+array(
+  array( 1, 0, 0 ),
+  array( 0, 1, 0 ),
+  array( 0, 0, 1 )
+);
+]]>
+  </programlisting>
+
+  <para>
+  NumPhp has no restriction about number of dimensions. 
+  You can work with matrices from 0 to n dimensions.
+  </para>
+
+  <!-- NdArray type -->
+  <title>NdArray type</title>
+  <para>
+  <code>np</code> handles vectors and matrices with a SciPhp\NdArray type.
+  </para>
+
+  <programlisting role="php"><![CDATA[
+<?php
+use SciPhp\NumPhp as np;
+
+$matrix = np::ar(
+  [[ 1, 0, 0 ],
+   [ 0, 1, 0 ],
+   [ 0, 0, 1 ]]
+);
+
+echo get_class($matrix); // SciPhp\NdArray
+?>
+]]>
+  </programlisting>
+
+  <!-- Print matrices -->
+  <title>Print matrices</title>
+  <para>
+  When used as string, a NdArray will be printed. 
+  </para>
+
+  <programlisting role="php"><![CDATA[
+<?php
+use SciPhp\NumPhp as np;
+
+$matrix = np::ar(
+  [[ 1, 0, 0 ],
+   [ 0, 1, 0 ],
+   [ 0, 0, 1 ]]
+);
+
+echo $matrix;
+?>
+]]>
+  </programlisting>
+
+  <screen><![CDATA[
+[[1  0  0]
+ [0  1  0]
+ [0  0  1]]
+]]>
+  </screen>
+
+  <!-- Print large matrices -->
+  <para>
+  If a matrix is too large, a truncated version will be rendered. 
+  </para>
+
+  <programlisting role="php"><![CDATA[
+<?php
+use SciPhp\NumPhp as np;
+
+// Create a matrice 100x5
+$matrix = np::arange(0, 10)->resize(100, 5);
+
+echo $matrix;
+?>
+]]>
+  </programlisting>
+
+  <screen>
+[[0    1    2    3    4  ]
+ [5    6    7    8    9  ]
+ [0    1    2    3    4  ]
+ [5    6    7    8    9  ]
+ [0    1    2    3    4  ]
+ [...  ...  ...  ...  ...]
+ [5    6    7    8    9  ]
+ [0    1    2    3    4  ]
+ [5    6    7    8    9  ]
+ [0    1    2    3    4  ]
+ [5    6    7    8    9  ]]
+
+  </screen>
+
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><attribute>NdArray::data</attribute></member>
+      <member><attribute>NdArray::ndim</attribute></member>
+      <member><attribute>NdArray::shape</attribute></member>
+      <member><attribute>NdArray::size</attribute></member>
+      <member><attribute>NdArray::T</attribute></member>
+    </simplelist>
+  </para>
+</refsect1>
+</reference>
