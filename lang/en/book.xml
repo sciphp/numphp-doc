@@ -9,11 +9,8 @@
 
     <!-- Getting started -->
     <simplelist>
-      <member>&GettingStarted;</member>
-      <simplelist>
-        <member><link linkend="basics">Basics</link></member>
-        <member><link linkend="tutorial">Quick start</link></member>
-      </simplelist>
+      <member><link linkend="basics">Basics</link></member>
+      <member><link linkend="tutorial">Quick start</link></member>
     </simplelist>
 
     <!-- API parts -->
