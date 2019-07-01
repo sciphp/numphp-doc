@@ -20,7 +20,7 @@
     to address a multidimensional array.
     For example, in PHP, accessing a three levels array would seem like
      <code>$m[0][0][0]</code>.
-    With indexes, it would be <code>$m['1,1,1']</code>.
+    With indexes, it would be <code>$m['0,0,0']</code>.
   </para>
 
   <para>
@@ -42,7 +42,7 @@
             to a range of rows or columns.
           </para>
           <para>
-            Matrix are indexed from 1 to n. 
+            Matrix are indexed from 0 to n - 1. 
           </para>
         </listitem>
       </varlistentry>
@@ -91,8 +91,8 @@ m
     <programlisting role="php">
 <![CDATA[
 
-$row = $m['2'];
-$column = $m[',2'];
+$row = $m['1'];
+$column = $m[':,1'];
 
 echo "row\n$row", "column\n$column";
 ]]>
@@ -115,7 +115,7 @@ column
     <programlisting role="php">
 <![CDATA[
 
-$columns = $m[', -2:'];
+$columns = $m[':, -2:'];
 
 echo "columns\n$columns";
 ]]>
@@ -139,7 +139,7 @@ columns
     <programlisting role="php">
 <![CDATA[
 
-$m[', 2'] = 42;
+$m[':, 1'] = 42;
 
 echo "m\n$m";
 ]]>
@@ -162,7 +162,7 @@ m
     <title>Assign a value to the 4 central values.</title>
     <programlisting role="php">
 <![CDATA[
-$m['2:3, 2:3'] = 0;
+$m['1:2, 1:2'] = 0;
 
 echo "m\n$m";
 ]]>
