@@ -12,7 +12,7 @@
     subsets of a matrix. In PHP, it is not a native capability, 
     therefore, <link linkend="ref.ndarray">NdArrays</link> 
     can be indexed using a string such as 
-    <code>',-1'</code> (last column) or <code>'-1'</code> (last line).
+    <code>':, -1'</code> (last column) or <code>'-1'</code> (last line).
   </para>
 
   <para>
