@@ -11,14 +11,29 @@
 <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-    &mixed.number.type;<methodname>NdArray::sum</methodname>
+    &mixed.number.type;|&sciphp.ndarray.type;<methodname>NdArray::sum</methodname>
+    <methodparam choice="opt"><type>int</type><parameter>axis = null</parameter></methodparam>
+    <methodparam choice="opt"><type>bool</type><parameter>keepdims = false</parameter></methodparam>
   </methodsynopsis>
 </refsect1>
 
 <!-- parameters -->
 <refsect1 role="parameters">
   &reftitle.parameters;
-  &no.function.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>axis</parameter></term>
+        <listitem>&int.function.parameters; Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array.</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>keepdims</parameter></term>
+        <listitem>&bool.function.parameters; If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
+            With this option, the result will broadcast correctly against the input array.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
 </refsect1>
 
 <!-- return -->
@@ -62,6 +77,86 @@ s=sum(m)
       </screen>
     </example>
    </para>
+
+<!-- Axis examples -->
+  <para>
+    <example>
+      <title>Sum a square matrix on different axis</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+// Sum over axis 0
+$s0 = $m->sum(0);
+
+// Sum over axis 1
+$s1 = $m->sum(1);
+
+echo "m\n$m", "s0=$s0", "s1=$s1";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+
+s0=[12  15  18]
+s1=[6   15  24]
+
+]]>
+      </screen>
+    </example>
+   </para>
+
+<!-- Combining axis and keepdims examples-->
+  <para>
+    <example>
+      <title>Sum a square matrix on different axis with keepdims = true</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+// Sum over axis 0 and keepdims = true
+$s0 = $m->sum(0, true);
+
+// Sum over axis 1 and keepdims = true
+$s1 = $m->sum(1, true);
+
+echo "m\n$m", "s0=$s0", "s1=$s1";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+
+s0=[[12  15  18]]
+s1=
+[[6 ]
+ [15]
+ [24]]
+
+
+]]>
+      </screen>
+    </example>
+   </para>
 </refsect1>
 
 <!-- see also -->
@@ -72,6 +167,7 @@ s=sum(m)
       <member><function>NdArray::add</function></member>
       <member><function>NdArray::divide</function></member>
       <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::power</function></member>
       <member><function>NdArray::subtract</function></member>
     </simplelist>
   </para>
