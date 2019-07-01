@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.power">
+
+<refnamediv>
+  <refname>NdArray::power</refname>
+  <refpurpose>Array elements raised to powers, element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::power</methodname>
+    <methodparam><type>&mixed.number.type;</type><parameter>exponent</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>exponent</parameter></term>
+        <listitem>&int.function.parameters; The exponent.</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Powers a square matrix</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+$p = $m->power(2);
+
+echo "m\n$m", "s=m.\n$s";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+p=m ** 2
+[[1   4   9 ]
+ [16  25  36]
+ [49  64  81]]
+
+]]>
+      </screen>
+    </example>
+   </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::add</function></member>
+      <member><function>NdArray::divide</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::sqrt</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
