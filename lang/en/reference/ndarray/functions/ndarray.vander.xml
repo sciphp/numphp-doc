@@ -120,7 +120,7 @@ m
   &reftitle.seealso;
   <para>
     <simplelist>
-      <member><function>NdArray::tri</function></member>
+      <member><function>NumPhp::tri</function></member>
       <member><function>NdArray::triu</function></member>
       <member><function>NdArray::tril</function></member>
       <member><function>NumPhp::logspace</function></member>
