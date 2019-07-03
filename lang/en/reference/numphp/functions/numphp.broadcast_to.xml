@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.broadcast_to">
+
+<refnamediv>
+  <refname>NumPhp::broadcast_to</refname>
+  <refpurpose>Broadcast an array to a new shape.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::broadcast_to</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+    <methodparam><type>&array.type;</type><parameter>shape</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>&number.function.parameters;</listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>shape</parameter></term>
+        <listitem>&shape.function.parameters;</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  A new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Adding a dimension</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::broadcast_to([1, 2, 3], [3, 1]);
+
+echo $x;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+[[1  2  3]]
+
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Broadcast a 1-dim (3,) to 2-dim (3,3)</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::broadcast_to([1, 2, 3], [3, 3]);
+
+echo "x\n$x";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+[[1  2  3]
+ [1  2  3]
+ [1  2  3]]
+
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Broadcast a 2-dim (1,3) to 2-dim (3,3) matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::broadcast_to([1, 2, 3], [3, 3]);
+
+echo "x\n$x";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+[[1  1  1]
+ [2  2  2]
+ [3  3  3]]
+
+]]>
+      </screen>
+    </example>
+    
+    <example>
+      <title>A broadcast failure throws an InvalidArgumentException</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::broadcast_to([1, 2, 3], [3, 1]);
+
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+InvalidArgumentException: Arrays could not be broadcast together with 
+remapped shapes [original->remapped]: [3] and requested shape [3  1]
+
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::resize</function></member>
+      <member><function>NdArray::reshape</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

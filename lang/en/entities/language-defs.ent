@@ -51,6 +51,8 @@
 <!ENTITY reftitle.usage        '<title xmlns="http://docbook.org/ns/docbook">Usage</title>'>
 
 <!ENTITY reftitle.array.creation '<title xmlns="http://docbook.org/ns/docbook">Array creation</title>'>
+<!ENTITY reftitle.array.changingdimensions '<title xmlns="http://docbook.org/ns/docbook">Changing number of dimensions</title>'>
+
 <!ENTITY reftitle.array.range '<title xmlns="http://docbook.org/ns/docbook">Range methods</title>'>
 <!ENTITY reftitle.array.shape.manipulation '<title xmlns="http://docbook.org/ns/docbook">Shape manipulation</title>'>
 <!ENTITY reftitle.array.basics '<title xmlns="http://docbook.org/ns/docbook">Array basics</title>'>

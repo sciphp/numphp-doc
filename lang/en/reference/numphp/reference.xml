@@ -21,6 +21,13 @@
       </simplelist>
     </para>
 
+    &reftitle.array.changingdimensions;
+    <para>
+      <simplelist>
+        <member><function>NumPhp::broadcast_to</function></member>
+      </simplelist>
+    </para>
+
     &reftitle.array.range;
     <para>
       <simplelist>
