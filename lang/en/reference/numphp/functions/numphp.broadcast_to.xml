@@ -23,11 +23,15 @@
     <variablelist>
       <varlistentry>
         <term><parameter>m</parameter></term>
-        <listitem>&number.function.parameters;</listitem>
+        <listitem>
+            &mixed.array_ndarray.function.parameters;
+        </listitem>
       </varlistentry>
       <varlistentry>
         <term><parameter>shape</parameter></term>
-        <listitem>&shape.function.parameters;</listitem>
+        <listitem>
+            &shape.function.parameters;
+        </listitem>
       </varlistentry>
     </variablelist>
   </para>
