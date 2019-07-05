@@ -145,6 +145,8 @@ remapped shapes [original->remapped]: [3] and requested shape [3  1]
     <simplelist>
       <member><function>NdArray::resize</function></member>
       <member><function>NdArray::reshape</function></member>
+      <member><attribute>NdArray::ndim</attribute></member>
+      <member><attribute>NdArray::shape</attribute></member>
     </simplelist>
   </para>
 </refsect1>

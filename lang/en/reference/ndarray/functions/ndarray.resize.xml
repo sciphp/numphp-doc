@@ -92,6 +92,9 @@ print $x->resize(2, 2);
     <simplelist>
       <member><function>NdArray::ravel</function></member>
       <member><function>NdArray::reshape</function></member>
+      <member><attribute>NdArray::ndim</attribute></member>
+      <member><attribute>NdArray::shape</attribute></member>
+      <member><function>NumPhp::broadcast_to</function></member>
       <member><function>NumPhp::arange</function></member>
       <member><function>NumPhp::linspace</function></member>
       <member><function>NumPhp::logspace</function></member>
