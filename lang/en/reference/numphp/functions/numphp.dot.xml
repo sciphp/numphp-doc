@@ -112,7 +112,7 @@ p=m.n
       </screen>
     </example>
     <example>
-      <title>Product lamda . matrix</title>
+      <title>Product lambda . matrix</title>
       <programlisting role="php">
 <![CDATA[
 use SciPhp\NumPhp as np;

@@ -110,7 +110,7 @@ s=m-n
       </screen>
     </example>
     <example>
-      <title>Addition of lamda and matrix</title>
+      <title>Addition of lambda and matrix</title>
       <programlisting role="php">
 <![CDATA[
 use SciPhp\NumPhp as np;
