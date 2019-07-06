@@ -25,6 +25,7 @@
     <para>
       <simplelist>
         <member><function>NumPhp::broadcast_to</function></member>
+        <member><function>NumPhp::is_square</function></member>
       </simplelist>
     </para>
 

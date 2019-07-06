@@ -7,6 +7,7 @@
 <!ENTITY string.type '<type xmlns="http://docbook.org/ns/docbook">string</type>'>
 <!ENTITY int.type '<type xmlns="http://docbook.org/ns/docbook">int</type>'>
 <!ENTITY mixed.number.type '<type xmlns="http://docbook.org/ns/docbook">float|int</type>'>
+<!ENTITY boolean.type '<type xmlns="http://docbook.org/ns/docbook">bool</type>'>
 
 
 <!-- parameters -->

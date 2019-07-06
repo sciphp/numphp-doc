@@ -23,6 +23,7 @@
     <simplelist>
       <member><function>NdArray::copy</function></member>
       <member><function>NdArray::negative</function></member>
+      <member><function>NdArray::is_square</function></member>
     </simplelist>
   </para>
 

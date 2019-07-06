@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.is_square">
+
+<refnamediv>
+  <refname>NdArray::is_square</refname>
+  <refpurpose>Check that it's a square matrix.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &boolean.type;<methodname>NdArray::is_square</methodname>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &bool.function.parameters; True if it's a square matrix, false otherwise.
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Testing some matrices</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+// false, it's a 1-dim
+np::ar([1, 2, 3])->is_square();
+
+// true, it's a 3x3
+np::ar(
+ [[1, 2, 3],
+  [1, 2, 3],
+  [1, 2, 3]]
+)->is_square();
+
+// false, it's a 4x3
+np::ar(
+ [[1, 2, 3],
+  [1, 2, 3],
+  [1, 2, 3],
+  [1, 2, 3]]
+)->is_square();
+
+]]>
+      </programlisting>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><attribute>NdArray::shape</attribute></member>
+      <member><attribute>NdArray::ndim</attribute></member>
+      <member><function>NdArray::reshape</function></member>
+      <member><function>NdArray::resize</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
