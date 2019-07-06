@@ -23,7 +23,7 @@
     <variablelist>
       <varlistentry>
         <term><parameter>exponent</parameter></term>
-        <listitem>&int.function.parameters; The exponent.</listitem>
+        <listitem>&number.function.parameters; The exponent.</listitem>
       </varlistentry>
     </variablelist>
   </para>
