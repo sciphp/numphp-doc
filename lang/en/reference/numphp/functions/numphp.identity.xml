@@ -71,9 +71,11 @@ print $m;
   &reftitle.seealso;
   <para>
     <simplelist>
-      <member><function>NumPhp::diag</function></member>
       <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::diagflat</function></member>
+      <member><function>NumPhp::diag</function></member>
       <member><function>NumPhp::eye</function></member>
+      <member><function>NdArray::trace</function></member>
       <member><function>NumPhp::linspace</function></member>
     </simplelist>
   </para>

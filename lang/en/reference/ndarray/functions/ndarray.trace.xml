@@ -100,7 +100,11 @@ r
   &reftitle.seealso;
   <para>
     <simplelist>
-      <member><function>NdArray::diagonal</function></member>
+      <member><function>NumPhp::diagonal</function></member>
+      <member><function>NumPhp::diag</function></member>
+      <member><function>NumPhp::diagflat</function></member>
+      <member><function>NumPhp::eye</function></member>
+      <member><function>NumPhp::identity</function></member>
       <member><function>NdArray::prod</function></member>
       <member><function>NdArray::sum</function></member>
     </simplelist>

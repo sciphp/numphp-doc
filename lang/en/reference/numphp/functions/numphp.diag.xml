@@ -163,6 +163,7 @@ Matrix 4*3:
       <member><function>NumPhp::diagflat</function></member>
       <member><function>NumPhp::eye</function></member>
       <member><function>NumPhp::identity</function></member>
+      <member><function>NdArray::trace</function></member>
       <member><function>NumPhp::linspace</function></member>
     </simplelist>
   </para>
