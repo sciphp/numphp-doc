@@ -10,21 +10,31 @@
 <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-    &boolean.type;<methodname>NdArray::is_square</methodname>
+    &boolean.type;<methodname>NumPhp::is_square</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
   </methodsynopsis>
 </refsect1>
 
 <!-- parameters -->
 <refsect1 role="parameters">
   &reftitle.parameters;
-  <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
 </refsect1>
 
 <!-- return -->
 <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-  &bool.function.parameters; True if it's a square matrix, false otherwise.
+  &bool.function.parameters; True if given matrix is a square matrix, false otherwise.
   </para>
 </refsect1>
 
