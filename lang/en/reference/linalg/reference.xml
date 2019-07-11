@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="ref.linalg">
+  <title>Linear Algebra &Functions;</title>
+
+  <refsect1 role="chapter">
+
+    <title>Norms</title>
+    <para>
+      <simplelist>
+        <member><function>LinAlg::norm</function></member>
+      </simplelist>
+    </para>
+
+    <title>Decompositions</title>
+    <para>
+      <simplelist>
+        <member><function>LinAlg::cholesky</function></member>
+      </simplelist>
+    </para>
+
+  </refsect1>
+
+</reference>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="linalg.norm">
+
+<refnamediv>
+  <refname>LinAlg::norm</refname>
+  <refpurpose>Matrix or vector norm.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &mixed.number.type;<methodname>LinAlg::norm</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+            &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &number.function.parameters; Norm of the matrix or vector.
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Calculating norm of a matrix</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m = 
+    [[1, 2],
+     [0, 2]];
+
+echo np::linalg()->norm($m);
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+3
+
+]]>
+      </screen>
+    </example>
+
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>LinAlg::cholesky</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
