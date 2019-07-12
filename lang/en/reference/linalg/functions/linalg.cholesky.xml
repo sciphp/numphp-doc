@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="linalg.cholesky">
+
+<refnamediv>
+  <refname>LinAlg::cholesky</refname>
+  <refpurpose>Cholesky decomposition.</refpurpose>
+  <para>Return the Cholesky decomposition. Only lower-triangular is returned.</para>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>np::linalg()->cholesky</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+            &mixed.array_ndarray.function.parameters; Matrix must be symmetric and positive-definite.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &sciphp.ndarray.type; Lower-triangular of the Cholesky decomposition.
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Calculating Cholesky decomposition</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$m =
+[[ 2,  -1,  0 ],
+ [-1,   2, -1 ],
+ [ 0,  -1,  2 ]];
+
+$lower = np::linalg()->cholesky($m);
+$upper = $lower->T;
+
+echo "lower=\n$lower", "upper=\n$upper";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+lower=
+[[1.4142135623731    0                  0                ]
+ [-0.70710678118655  1.2247448713916    0                ]
+ [0                  -0.81649658092773  1.1547005383793  ]]
+upper=
+[[1.4142135623731    -0.70710678118655  0                ]
+ [0                  1.2247448713916    -0.81649658092773]
+ [0                  0                  1.1547005383793  ]]
+]]>
+      </screen>
+    </example>
+
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>LinAlg::norm</function></member>
+      <member><function>NdArray::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
