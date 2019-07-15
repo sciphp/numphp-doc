@@ -77,7 +77,7 @@ use SciPhp\NumPhp as np;
 
 // Construct 2 matrices 3*3
 $m = np::vander([1, 2, 3]);
-$n = np::linspace(1, 9, 9)->reshape(3,3);
+$n = np::linspace(1, 9, 9)->reshape(3, 3);
 
 $a = np::dot($m, $n);
 
@@ -131,9 +131,15 @@ triangle
   &reftitle.seealso;
   <para>
     <simplelist>
-      <member><function>NdArray::add</function></member>
       <member><function>NumPhp::add</function></member>
       <member><function>NumPhp::dot</function></member>
+      <member><function>NumPhp::arange</function></member>
+      <member><function>NumPhp::linspace</function></member>
+      <member><function>NumPhp::vander</function></member>
+      <member><function>NdArray::reciprocal</function></member>
+      <member><function>NdArray::resize</function></member>
+      <member><function>NdArray::reshape</function></member>
+      <member><function>NdArray::tril</function></member>
     </simplelist>
   </para>
 </refsect1>
