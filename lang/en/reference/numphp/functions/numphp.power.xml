@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="numphp.power">
+
+<refnamediv>
+  <refname>NumPhp::power</refname>
+  <refpurpose>Array elements raised to powers, element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::power</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
+    <methodparam><type>&mixed.number.type;</type><parameter>exponent</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>exponent</parameter></term>
+        <listitem>&number.function.parameters; The exponent.</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Powers a square matrix</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+
+use SciPhp\NumPhp as np;
+
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
+
+$p = np::power($m, 2);
+
+echo "m\n$m", "s=m.\n$s";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+p=m ** 2
+[[1   4   9 ]
+ [16  25  36]
+ [49  64  81]]
+
+]]>
+      </screen>
+    </example>
+   </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NumPhp::add</function></member>
+      <member><function>NumPhp::divide</function></member>
+      <member><function>NumPhp::multiply</function></member>
+      <member><function>NumPhp::sqrt</function></member>
+      <member><function>NumPhp::subtract</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
