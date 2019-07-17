@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.sqrt">
+
+<refnamediv>
+  <refname>NdArray::sqrt</refname>
+  <refpurpose>The non-negative square-root of an array, element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NumPhp::sqrt</methodname>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>square-root of the matrix</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+use SciPhp\NumPhp as np;
+
+$m = np::vander([1, 4, 9]);
+
+$n = $m->sqrt();
+
+echo "m=n\n$m", "n=m*m\n$n";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+m=n
+[[1   1   1 ]
+ [16  4   1 ]
+ [81  9   1 ]]
+n=sqrt(m)
+[[1  1  1]
+ [4  2  1]
+ [9  3  1]]
+
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::power</function></member>
+      <member><function>NdArray::square</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
