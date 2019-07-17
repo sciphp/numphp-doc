@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<refentry xml:id="ndarray.sqrt">
+<refentry xml:id="numphp.square">
 
 <refnamediv>
-  <refname>NdArray::sqrt</refname>
-  <refpurpose>The non-negative square-root of an array, element-wise.
+  <refname>NumPhp::square</refname>
+  <refpurpose>The element-wise square of the matrix.
   </refpurpose>
 </refnamediv>
 
@@ -11,14 +11,24 @@
 <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-    &sciphp.ndarray.type;<methodname>NdArray::sqrt</methodname>
+    &sciphp.ndarray.type;<methodname>NumPhp::square</methodname>
+    <methodparam><type>&mixed.array_ndarray.type;</type><parameter>m</parameter></methodparam>
   </methodsynopsis>
 </refsect1>
 
 <!-- parameters -->
 <refsect1 role="parameters">
   &reftitle.parameters;
-  &no.function.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>m</parameter></term>
+        <listitem>
+          &mixed.array_ndarray.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
 </refsect1>
 
 <!-- return -->
@@ -34,15 +44,15 @@
   &reftitle.examples;
   <para>
     <example>
-      <title>square-root of the matrix</title>
+      <title>Square of the matrix</title>
       <programlisting role="php">
 <![CDATA[
 <?php
 use SciPhp\NumPhp as np;
 
-$m = np::vander([1, 4, 9]);
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
 
-$n = $m->sqrt();
+$n = np::square($m);
 
 echo "m=n\n$m", "n=m*m\n$n";
 ?>
@@ -52,13 +62,13 @@ echo "m=n\n$m", "n=m*m\n$n";
       <screen>
 <![CDATA[
 m=n
-[[1   1   1 ]
- [16  4   1 ]
- [81  9   1 ]]
-n=sqrt(m)
-[[1  1  1]
- [4  2  1]
- [9  3  1]]
+[[1  2  3]
+ [4  5  6]
+ [7  8  9]]
+n=m*m
+[[1   4   9 ]
+ [16  25  36]
+ [49  64  81]]
 
 ]]>
       </screen>
@@ -71,10 +81,10 @@ n=sqrt(m)
   &reftitle.seealso;
   <para>
     <simplelist>
-      <member><function>NdArray::multiply</function></member>
-      <member><function>NdArray::power</function></member>
-      <member><function>NdArray::square</function></member>
-      <member><function>NdArray::dot</function></member>
+      <member><function>NumPhp::multiply</function></member>
+      <member><function>NumPhp::power</function></member>
+      <member><function>NumPhp::sqrt</function></member>
+      <member><function>NumPhp::dot</function></member>
       <member><function>NumPhp::linspace</function></member>
     </simplelist>
   </para>
