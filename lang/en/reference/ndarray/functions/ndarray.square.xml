@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<refentry xml:id="ndarray.copy">
+<refentry xml:id="ndarray.square">
 
 <refnamediv>
-  <refname>NdArray::copy</refname>
-  <refpurpose>Copy an array</refpurpose>
+  <refname>NdArray::square</refname>
+  <refpurpose>The element-wise square of the matrix.
+  </refpurpose>
 </refnamediv>
 
 <!-- description -->
 <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-    &sciphp.ndarray.type;<methodname>NdArray::copy</methodname>
+    &sciphp.ndarray.type;<methodname>NumPhp::square</methodname>
   </methodsynopsis>
 </refsect1>
 
@@ -33,27 +34,32 @@
   &reftitle.examples;
   <para>
     <example>
-      <title>Copy a matrix</title>
+      <title>Square of the matrix</title>
       <programlisting role="php">
 <![CDATA[
+<?php
 use SciPhp\NumPhp as np;
 
-$x = np::linspace(1, 6, 6)->resize(3, 3);
-$y = $x->copy()->resize(2, 6);
+$m = np::linspace(1, 9, 9)->reshape(3, 3);
 
-echo "x\n$x", "y\n$y";
+$n = $m->square($m);
+
+echo "m=n\n$m", "n=m*m\n$n";
+?>
 ]]>
       </programlisting>
       &example.outputs;
       <screen>
 <![CDATA[
-x
+m=n
 [[1  2  3]
  [4  5  6]
- [1  2  3]]
-y
-[[1  2  3  4  5  6]
- [1  2  3  1  2  3]]
+ [7  8  9]]
+n=m*m
+[[1   4   9 ]
+ [16  25  36]
+ [49  64  81]]
+
 ]]>
       </screen>
     </example>
@@ -65,10 +71,11 @@ y
   &reftitle.seealso;
   <para>
     <simplelist>
-      <member><attribute>NdArray::data</attribute></member>
-      <member><attribute>NdArray::T</attribute></member>
-      <member><function>NdArray::ravel</function></member>
-      <member><function>NdArray::resize</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::power</function></member>
+      <member><function>NdArray::sqrt</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NdArray::linspace</function></member>
     </simplelist>
   </para>
 </refsect1>
