@@ -39,7 +39,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $x = np::ar(

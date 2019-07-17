@@ -47,7 +47,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 // Create a 2*3 matrix

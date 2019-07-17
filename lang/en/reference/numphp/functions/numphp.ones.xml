@@ -47,7 +47,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $x = np::ones([2, 2]);
@@ -70,7 +69,6 @@ echo $x;
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $x = np::ones(3, 3, 3);

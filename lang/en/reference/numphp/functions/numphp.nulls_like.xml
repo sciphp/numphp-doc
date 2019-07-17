@@ -52,7 +52,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $x = np::nulls_like(
@@ -77,7 +76,6 @@ echo $x;
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 // 3-D array 

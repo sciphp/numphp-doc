@@ -50,7 +50,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 // x, y, z coordinates
@@ -72,7 +71,6 @@ echo $x;
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $x = np::ar([[1, 2], [3, 4]]);

@@ -60,7 +60,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $m = np::linspace(1, 9, 9)->reshape(3, 3);
@@ -92,7 +91,6 @@ s=sum(m)
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $m = np::linspace(1, 9, 9)->reshape(3, 3);
@@ -130,7 +128,6 @@ s1=[6   15  24]
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $m = np::linspace(1, 9, 9)->reshape(3, 3);

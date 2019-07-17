@@ -49,7 +49,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $x = np::zeros_like(
@@ -74,7 +73,6 @@ echo $x;
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 // 3-D array 

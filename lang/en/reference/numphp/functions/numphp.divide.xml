@@ -56,7 +56,6 @@
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $m = np::vander([1, 2, 3]);
@@ -87,7 +86,6 @@ d=m/2
       <programlisting role="php">
 <![CDATA[
 <?php
-
 use SciPhp\NumPhp as np;
 
 $m = np::arange(0, 18, 2)->reshape(3, 3);
