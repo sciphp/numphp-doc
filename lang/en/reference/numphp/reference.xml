@@ -72,6 +72,8 @@
     <para>
       <simplelist>
         <member><function>NumPhp::power</function></member>
+        <member><function>NumPhp::sqrt</function></member>
+        <member><function>NumPhp::square</function></member>
         <member><function>NumPhp::vander</function></member>
       </simplelist>
     </para>

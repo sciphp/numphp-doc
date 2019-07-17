@@ -47,6 +47,8 @@
       <member><function>NdArray::multiply</function></member>
       <member><function>NdArray::power</function></member>
       <member><function>NdArray::reciprocal</function></member>
+      <member><function>NdArray::sqrt</function></member>
+      <member><function>NdArray::square</function></member>
       <member><function>NdArray::subtract</function></member>
     </simplelist>
   </para>
