@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.cos">
+
+<refnamediv>
+  <refname>NdArray::cos</refname>
+  <refpurpose>Cosine element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::cos</methodname>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type; The corresponding cosine values. 
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Cosine matrix values</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+use SciPhp\NumPhp as np;
+
+$x = np::ar([
+    [0   , M_PI_2, M_PI], 
+    [M_PI, M_PI_2, 0   ]
+]);
+
+$y = $x->cos();
+
+echo "x=\n$x\n", "y=\n$y\n";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x=
+[[0                1.5707963267949  3.1415926535898]
+ [3.1415926535898  1.5707963267949  0              ]]
+
+y=
+[[1                    6.1232339957368E-17  -1                 ]
+ [-1                   6.1232339957368E-17  1                  ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::sin</function></member>
+      <member><function>NdArray::tan</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::power</function></member>
+      <member><function>NdArray::square</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

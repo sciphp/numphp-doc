@@ -78,6 +78,15 @@
       </simplelist>
     </para>
 
+    <title>Mathematical functions</title>
+    <para>
+      <simplelist>
+        <member><function>NumPhp::cos</function></member>
+        <member><function>NumPhp::sin</function></member>
+        <member><function>NumPhp::tan</function></member>
+      </simplelist>
+    </para>
+
     <title>Arithmetic</title>
     <para>
       <simplelist>
