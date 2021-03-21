@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="ndarray.tan">
+
+<refnamediv>
+  <refname>NdArray::tan</refname>
+  <refpurpose>Compute tangent element-wise.
+  </refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>NdArray::tan</methodname>
+  </methodsynopsis>
+  <para>Equivalent to $m->sin()->divide($m->cos()).
+  </para>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  &no.function.parameters;
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type; The corresponding tangent values.
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Compute matrix tangent values</title>
+      <programlisting role="php">
+<![CDATA[
+<?php
+use SciPhp\NumPhp as np;
+
+$x = np::ar([
+    [0   , M_PI_2 / 2, - M_PI / 4], 
+    [M_PI / 4, M_PI_2 / 2, 0   ]
+]);
+
+$y = $x->tan();
+
+echo "x=\n$x", "y=\n$y";
+?>
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x=
+[[0                  0.78539816339745   -0.78539816339745]
+ [0.78539816339745   0.78539816339745   0                ]]
+y=
+[[0   1   -1]
+ [1   1   0 ]]
+]]>
+      </screen>
+    </example>
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><function>NdArray::cos</function></member>
+      <member><function>NdArray::sin</function></member>
+      <member><function>NdArray::multiply</function></member>
+      <member><function>NdArray::power</function></member>
+      <member><function>NdArray::square</function></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>NumPhp::linspace</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

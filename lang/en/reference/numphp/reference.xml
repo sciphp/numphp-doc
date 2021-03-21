@@ -1,139 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <reference xml:id="ref.numphp">
-  <title>NumPhp &Functions;</title>
+<title>NumPhp &Functions;</title>
 
-  <!-- array creation -->
-  <refsect1 role="chapter">
+<!-- array creation -->
+<refsect1 role="chapter">
 
     &reftitle.array.creation;
     <para>
-      <simplelist>
-        <member><function>NumPhp::ar</function></member>
-        <member><function>NumPhp::full</function></member>
-        <member><function>NumPhp::nulls</function></member>
-        <member><function>NumPhp::ones</function></member>
-        <member><function>NumPhp::zeros</function></member>
-        <member><function>NumPhp::full_like</function></member>
-        <member><function>NumPhp::nulls_like</function></member>
-        <member><function>NumPhp::ones_like</function></member>
-        <member><function>NumPhp::zeros_like</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::ar</function></member>
+            <member><function>NumPhp::full</function></member>
+            <member><function>NumPhp::nulls</function></member>
+            <member><function>NumPhp::ones</function></member>
+            <member><function>NumPhp::zeros</function></member>
+            <member><function>NumPhp::full_like</function></member>
+            <member><function>NumPhp::nulls_like</function></member>
+            <member><function>NumPhp::ones_like</function></member>
+            <member><function>NumPhp::zeros_like</function></member>
+        </simplelist>
     </para>
 
     &reftitle.array.changingdimensions;
     <para>
-      <simplelist>
-        <member><function>NumPhp::broadcast_to</function></member>
-        <member><function>NumPhp::is_square</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::broadcast_to</function></member>
+            <member><function>NumPhp::is_square</function></member>
+        </simplelist>
     </para>
 
     &reftitle.array.range;
     <para>
-      <simplelist>
-        <member><function>NumPhp::arange</function></member>
-        <member><function>NumPhp::linspace</function></member>
-        <member><function>NumPhp::logspace</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::arange</function></member>
+            <member><function>NumPhp::linspace</function></member>
+            <member><function>NumPhp::logspace</function></member>
+        </simplelist>
     </para>
 
     <title>Files</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::loadtxt</function></member>
-        <member><function>NumPhp::save</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::loadtxt</function></member>
+            <member><function>NumPhp::save</function></member>
+        </simplelist>
     </para>
 
     <title>Diagonal matrix</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::diag</function></member>
-        <member><function>NumPhp::diagflat</function></member>
-        <member><function>NumPhp::diagonal</function></member>
-        <member><function>NumPhp::eye</function></member>
-        <member><function>NumPhp::negative</function></member>
-        <member><function>NumPhp::identity</function></member>
-        <member><function>NumPhp::trace</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::diag</function></member>
+            <member><function>NumPhp::diagflat</function></member>
+            <member><function>NumPhp::diagonal</function></member>
+            <member><function>NumPhp::eye</function></member>
+            <member><function>NumPhp::negative</function></member>
+            <member><function>NumPhp::identity</function></member>
+            <member><function>NumPhp::trace</function></member>
+        </simplelist>
     </para>
 
     <title>Triangle matrix</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::tri</function></member>
-        <member><function>NumPhp::tril</function></member>
-        <member><function>NumPhp::triu</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::tri</function></member>
+            <member><function>NumPhp::tril</function></member>
+            <member><function>NumPhp::triu</function></member>
+        </simplelist>
     </para>
 
     <title>Power matrix</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::power</function></member>
-        <member><function>NumPhp::sqrt</function></member>
-        <member><function>NumPhp::square</function></member>
-        <member><function>NumPhp::vander</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::power</function></member>
+            <member><function>NumPhp::sqrt</function></member>
+            <member><function>NumPhp::square</function></member>
+            <member><function>NumPhp::vander</function></member>
+        </simplelist>
     </para>
 
     <title>Mathematical functions</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::cos</function></member>
-        <member><function>NumPhp::sin</function></member>
-        <member><function>NumPhp::tan</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::cos</function></member>
+            <member><function>NumPhp::sin</function></member>
+            <member><function>NumPhp::tan</function></member>
+        </simplelist>
     </para>
 
     <title>Arithmetic</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::add</function></member>
-        <member><function>NumPhp::divide</function></member>
-        <member><function>NumPhp::dot</function></member>
-        <member><function>NumPhp::multiply</function></member>
-        <member><function>NumPhp::reciprocal</function></member>
-        <member><function>NumPhp::subtract</function></member>
-        <member><function>NumPhp::transpose</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::add</function></member>
+            <member><function>NumPhp::divide</function></member>
+            <member><function>NumPhp::dot</function></member>
+            <member><function>NumPhp::multiply</function></member>
+            <member><function>NumPhp::reciprocal</function></member>
+            <member><function>NumPhp::subtract</function></member>
+            <member><function>NumPhp::transpose</function></member>
+        </simplelist>
     </para>
 
     <title>Sums, products, differences</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::prod</function></member>
-        <member><function>NumPhp::sum</function></member>
-        <member><function>NumPhp::trapz</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::prod</function></member>
+            <member><function>NumPhp::sum</function></member>
+            <member><function>NumPhp::trapz</function></member>
+        </simplelist>
     </para>
 
     <title>Logarithms</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::log</function></member>
-        <member><function>NumPhp::log10</function></member>
-        <member><function>NumPhp::log2</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::log</function></member>
+            <member><function>NumPhp::log10</function></member>
+            <member><function>NumPhp::log2</function></member>
+        </simplelist>
     </para>
 
     <title>Exponents</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::exp</function></member>
-        <member><function>NumPhp::expm1</function></member>
-        <member><function>NumPhp::exp2</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::exp</function></member>
+            <member><function>NumPhp::expm1</function></member>
+            <member><function>NumPhp::exp2</function></member>
+        </simplelist>
     </para>
 
     <title>Floating point</title>
     <para>
-      <simplelist>
-        <member><function>NumPhp::signbit</function></member>
-        <member><function>NumPhp::copysign</function></member>
-      </simplelist>
+        <simplelist>
+            <member><function>NumPhp::signbit</function></member>
+            <member><function>NumPhp::copysign</function></member>
+        </simplelist>
     </para>
-  </refsect1>
+</refsect1>
 
 </reference>
