@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="sitemap">
+ <title>&SciPhpSitemap;</title>
+ <para>Welcome on &SciPhpSitemap;</para>
+
+  <!-- chapters -->
+  <refsect1 role="chapter">
+
+    <title><link linkend="ref.ndarray">NdArray Functions</link></title>
+    <para>
+      <simplelist>
+        <member><function>NdArray::add</function></member>
+        <member><function>NdArray::copy</function></member>
+        <member><function>NdArray::copysign</function></member>
+        <member><function>NdArray::cos</function></member>
+        <member><function>NdArray::divide</function></member>
+        <member><function>NdArray::dot</function></member>
+        <member><function>NdArray::exp</function></member>
+        <member><function>NdArray::exp2</function></member>
+        <member><function>NdArray::expm1</function></member>
+        <member><function>NdArray::is_square</function></member>
+        <member><function>NdArray::log</function></member>
+        <member><function>NdArray::log10</function></member>
+        <member><function>NdArray::log2</function></member>
+        <member><function>NdArray::multiply</function></member>
+        <member><function>NdArray::negative</function></member>
+        <member><function>NdArray::power</function></member>
+        <member><function>NdArray::ravel</function></member>
+        <member><function>NdArray::reciprocal</function></member>
+        <member><function>NdArray::reshape</function></member>
+        <member><function>NdArray::resize</function></member>
+        <member><function>NdArray::signbit</function></member>
+        <member><function>NdArray::sin</function></member>
+        <member><function>NdArray::sqrt</function></member>
+        <member><function>NdArray::square</function></member>
+        <member><function>NdArray::subtract</function></member>
+        <member><function>NdArray::sum</function></member>
+        <member><function>NdArray::tan</function></member>
+        <member><function>NdArray::trace</function></member>
+        <member><function>NdArray::trapz</function></member>
+        <member><function>NdArray::tril</function></member>
+        <member><function>NdArray::triu</function></member>
+        <member><function>NdArray::vander</function></member>
+      </simplelist>
+    </para>
+
+    <title><link linkend="ref.numphp">NumPhp Functions</link></title>
+    <para>
+      <simplelist>
+        <member><function>NumPhp::add</function></member>
+        <member><function>NumPhp::ar</function></member>
+        <member><function>NumPhp::arange</function></member>
+        <member><function>NumPhp::broadcast_to</function></member>
+        <member><function>NumPhp::copysign</function></member>
+        <member><function>NumPhp::cos</function></member>
+        <member><function>NumPhp::diag</function></member>
+        <member><function>NumPhp::diagflat</function></member>
+        <member><function>NumPhp::diagonal</function></member>
+        <member><function>NumPhp::divide</function></member>
+        <member><function>NumPhp::dot</function></member>
+        <member><function>NumPhp::exp</function></member>
+        <member><function>NumPhp::exp2</function></member>
+        <member><function>NumPhp::expm1</function></member>
+        <member><function>NumPhp::eye</function></member>
+        <member><function>NumPhp::full</function></member>
+        <member><function>NumPhp::full_like</function></member>
+        <member><function>NumPhp::identity</function></member>
+        <member><function>NumPhp::is_square</function></member>
+        <member><function>NumPhp::linspace</function></member>
+        <member><function>NumPhp::loadtxt</function></member>
+        <member><function>NumPhp::log</function></member>
+        <member><function>NumPhp::log10</function></member>
+        <member><function>NumPhp::log2</function></member>
+        <member><function>NumPhp::logspace</function></member>
+        <member><function>NumPhp::multiply</function></member>
+        <member><function>NumPhp::negative</function></member>
+        <member><function>NumPhp::nulls</function></member>
+        <member><function>NumPhp::nulls_like</function></member>
+        <member><function>NumPhp::ones</function></member>
+        <member><function>NumPhp::ones_like</function></member>
+        <member><function>NumPhp::power</function></member>
+        <member><function>NumPhp::reciprocal</function></member>
+        <member><function>NumPhp::signbit</function></member>
+        <member><function>NumPhp::sin</function></member>
+        <member><function>NumPhp::sqrt</function></member>
+        <member><function>NumPhp::square</function></member>
+        <member><function>NumPhp::subtract</function></member>
+        <member><function>NumPhp::sum</function></member>
+        <member><function>NumPhp::tan</function></member>
+        <member><function>NumPhp::trace</function></member>
+        <member><function>NumPhp::transpose</function></member>
+        <member><function>NumPhp::trapz</function></member>
+        <member><function>NumPhp::tri</function></member>
+        <member><function>NumPhp::tril</function></member>
+        <member><function>NumPhp::triu</function></member>
+        <member><function>NumPhp::vander</function></member>
+        <member><function>NumPhp::zeros</function></member>
+        <member><function>NumPhp::zeros_like</function></member>
+      </simplelist>
+    </para>
+
+    <title><link linkend="ref.linalg">Linear algebra Functions</link></title>
+    <para>
+      <simplelist>
+        <member><function>LinAlg::cholesky</function></member>
+        <member><function>LinAlg::norm</function></member>
+      </simplelist>
+    </para>
+
+    <title><link linkend="ref.random">Random Generator Functions</link></title>
+    <para>
+      <simplelist>
+      </simplelist>
+    </para>
+
+  </refsect1>
+
+</reference>
