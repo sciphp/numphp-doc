@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<reference xml:id="ref.random">
+  <title>Random generator &Functions;</title>
+
+  <refsect1 role="chapter">
+
+    <title>Random states</title>
+    <para>
+      <simplelist>
+        <member><function>Random::randn</function></member>
+      </simplelist>
+    </para>
+
+
+  </refsect1>
+
+</reference>

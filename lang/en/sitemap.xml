@@ -111,6 +111,7 @@
     <title><link linkend="ref.random">Random Generator Functions</link></title>
     <para>
       <simplelist>
+        <member><function>Random::randn</function></member>
       </simplelist>
     </para>
 

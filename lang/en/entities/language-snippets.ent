@@ -24,6 +24,7 @@
 <!ENTITY multidimensional.array.function.parameters 'A multidimensional array of data.'>
 <!ENTITY axes.array.function.parameters 'A 1-dim array which represents axes.'>
 <!ENTITY no.function.parameters '<para xmlns="http://docbook.org/ns/docbook">This function has no parameters.</para>'>
+<!ENTITY optional.parameters '<para xmlns="http://docbook.org/ns/docbook">This parameter is optional.</para>'>
 
 <!-- return -->
 <!ENTITY array.return 'A PHP array like [1, 2, 3]'>

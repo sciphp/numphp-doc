@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="random.randn">
+
+<refnamediv>
+  <refname>Random::randn</refname>
+  <refpurpose>Return a sample (or samples) from the “standard normal” distribution.</refpurpose>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;|&float.type;<methodname>Random::randn</methodname>
+    <methodparam><type>&shape.function.parameters;</type><parameter>shape</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>shape</parameter></term>
+        <listitem>
+            &optional.parameters;
+            &shape.function.parameters;
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+  The new &sciphp.ndarray.type;
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>A 2x2 matrix with random samples</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::random()->randn([2, 2]);
+
+// Dimensions may be given as a list
+$y = np::random()->randn(2, 2);
+
+echo "x\n$x", "y\n$y";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+[[-1.0314668501755    -0.20875053683428 ]
+ [-0.18028808349697    0.70316066128862 ]]
+y
+[[-2.5371584413573    -0.90673521294318 ]
+ [ 0.072800653810671  -1.6912313186412  ]]
+
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Single float value</title>
+      <para>If no argument is given, a single float is returned.</para>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::random()->randn();
+
+echo "$x";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+2.0450638649566
+
+]]>
+      </screen>
+    </example>
+
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><link linkend="ref.ndarray">NdArray &Functions;</link></member>
+      <member><link linkend="ref.numphp">NumPhp &Functions;</link></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>
