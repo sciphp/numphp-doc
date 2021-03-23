@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<refentry xml:id="random.randn">
+<refentry xml:id="random.rand">
 
 <refnamediv>
-  <refname>Random::randn</refname>
+  <refname>Random::rand</refname>
   <refpurpose>Return a sample (or samples) from the “standard normal” distribution.</refpurpose>
+  <para>
+    sciphp/numphp>=0.5
+  </para>
 </refnamediv>
 
 <!-- description -->
 <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
-    &sciphp.ndarray.type;|&float.type;<methodname>Random::randn</methodname>
+    &sciphp.ndarray.type;<methodname>Random::randn</methodname>
     <methodparam><type>&array.type;</type><parameter>shape</parameter></methodparam>
   </methodsynopsis>
 </refsect1>
@@ -23,7 +26,6 @@
       <varlistentry>
         <term><parameter>shape</parameter></term>
         <listitem>
-            &optional.parameters;
             &mixed.tuple.function.parameters;
         </listitem>
       </varlistentry>
@@ -49,10 +51,10 @@
 <![CDATA[
 use SciPhp\NumPhp as np;
 
-$x = np::random()->randn([2, 2]);
+$x = np::random()->rand([2, 2]);
 
 // Dimensions may be given as a list
-$y = np::random()->randn(2, 2);
+$y = np::random()->rand(2, 2);
 
 echo "x\n$x", "y\n$y";
 ]]>
@@ -61,32 +63,11 @@ echo "x\n$x", "y\n$y";
       <screen>
 <![CDATA[
 x
-[[-1.0314668501755    -0.20875053683428 ]
- [-0.18028808349697    0.70316066128862 ]]
+[[0.20372898746456  0.98374478145677]
+ [0.36084358504081  0.84529060257845]]
 y
-[[-2.5371584413573    -0.90673521294318 ]
- [ 0.072800653810671  -1.6912313186412  ]]
-
-]]>
-      </screen>
-    </example>
-
-    <example>
-      <title>Single float value</title>
-      <para>If no argument is given, a single float is returned.</para>
-      <programlisting role="php">
-<![CDATA[
-use SciPhp\NumPhp as np;
-
-$x = np::random()->randn();
-
-echo "$x";
-]]>
-      </programlisting>
-      &example.outputs;
-      <screen>
-<![CDATA[
-2.0450638649566
+[[0.26993456867986  0.64427301410785]
+ [0.16477621400951  0.63518648344799]]
 
 ]]>
       </screen>
@@ -94,13 +75,13 @@ echo "$x";
 
     <example>
       <title>Standard normal usage</title>
-      <para>2.5 * np.random.randn(2, 4) + 3</para>
+      <para>2.5 * np.random.rand(2, 4) + 3</para>
       <programlisting role="php">
 <![CDATA[
 use SciPhp\NumPhp as np;
 
 // Chain operations
-$x = np::random()->randn(4, 2)
+$x = np::random()->rand(4, 2)
                  ->dot(2.5)
                  ->add(3);
 
@@ -111,10 +92,10 @@ echo "x\n$x";
       <screen>
 <![CDATA[
 x
-[[ 0.2871680360833    4.1630175467801 ]
- [ 1.2614584053774    5.6605538900953 ]
- [ 3.2456139405051   -2.1206885652537 ]
- [ 2.1875522275875    3.8683560179717 ]]
+[[3.2225247864716  3.2668907413105]
+ [3.3675023421494  4.1309541511028]
+ [3.2353675489944  4.2672627432119]
+ [3.8415077537491  4.3796868728845]]
 
 ]]>
       </screen>
