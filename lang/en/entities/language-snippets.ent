@@ -15,6 +15,7 @@
 <!ENTITY mixed.tuple.function.parameters 'This parameter can be an array [1, 2, 3] or a tuple of integers (1, 2, 3).'>
 <!ENTITY shape.function.parameters 'An array [1, 2, 3] of integers which represents the shape of the created NdArray.'>
 <!ENTITY mixed.array_ndarray.function.parameters 'An array [1, 2, 3] or a NdArray.'>
+<!ENTITY mixed.array_positive_integer.function.parameters 'An array of positive integers[1, 2, 3] or an integer.'>
 <!ENTITY array.function.parameters 'A PHP Array.'>
 <!ENTITY number.function.parameters 'A float or an integer.'>
 <!ENTITY int.function.parameters 'An integer.'>
@@ -28,6 +29,7 @@
 
 <!-- return -->
 <!ENTITY array.return 'A PHP array like [1, 2, 3]'>
+<!ENTITY single_int_array_ints.return 'int or a NdArray of ints'>
 
 <!-- examples -->
 <!ENTITY example.outputs '<para xmlns="http://docbook.org/ns/docbook">The above example will output:</para>'>

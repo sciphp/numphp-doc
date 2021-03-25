@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<refentry xml:id="random.randint">
+
+<refnamediv>
+  <refname>Random::randint</refname>
+  <refpurpose>Return random integers from low (inclusive) to high (exclusive).</refpurpose>
+  <para>
+    Return random integers from the “discrete uniform” distribution of
+    the specified dtype in the “half-open” interval [low, high).
+    If high is null (the default), then results are from [0, low).
+  </para>
+  <para>
+    sciphp/numphp>=0.5
+  </para>
+</refnamediv>
+
+<!-- description -->
+<refsect1 role="description">
+  &reftitle.description;
+  <methodsynopsis>
+    &sciphp.ndarray.type;<methodname>Random::randint</methodname>
+    <methodparam><type>&int.type;</type><parameter>low</parameter></methodparam>
+    <methodparam><type>&int.type;</type><parameter>high</parameter></methodparam>
+    <methodparam><type>&int.type;|&array.type;</type><parameter>size</parameter></methodparam>
+  </methodsynopsis>
+</refsect1>
+
+<!-- parameters -->
+<refsect1 role="parameters">
+  &reftitle.parameters;
+  <para>
+    <variablelist>
+      <varlistentry>
+        <term><parameter>low</parameter></term>
+        <listitem>
+            &int.function.parameters;
+            Lowest (signed) integer to be drawn from the distribution
+            (unless high=null, in which case this parameter is one above
+            the highest such integer).
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>high</parameter></term>
+        <listitem>
+            &int.function.parameters;
+            &optional.parameters;
+            If provided, one above the largest (signed) integer to be
+            drawn from the distribution.
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter>size</parameter></term>
+        <listitem>
+            &mixed.array_positive_integer.function.parameters;
+            &optional.parameters;
+            Output shape. If the given shape is, e.g., [m, n, k], then
+            m * n * k samples are drawn. Default is null, in which case
+            a single value is returned.
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+</refsect1>
+
+<!-- return -->
+<refsect1 role="returnvalues">
+  &reftitle.returnvalues;
+  <para>
+    &single_int_array_ints.return;
+    size-shaped array of random integers from the appropriate
+    distribution, or a single such random int if size not provided.
+  </para>
+</refsect1>
+
+<!-- examples -->
+<refsect1 role="examples">
+  &reftitle.examples;
+  <para>
+    <example>
+      <title>Get a single random integer between 0 and 5</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::random()->randint(6);
+
+echo $x;
+
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+3
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Get a single random integer between -5 and 5</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::random()->randint(-5, 6);
+
+echo $x;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+-2
+
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Get a 1-dim matrix with 10 random integers between -10 and 10</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::random()->randint(-10, 11, 10);
+
+echo $x;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[ 1    5   -8   -3   -1   -6    6    4   -8    7 ]
+
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Get a 4x2 matrix with random integers between -10 and 10</title>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::random()->randint(-10, 11, [4, 2]);
+
+echo $x;
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+[[-2   -2 ]
+ [ 7   -3 ]
+ [ 5    3 ]
+ [-2    0 ]]
+
+]]>
+      </screen>
+    </example>
+
+    <example>
+      <title>Use the random generated matrice with another one</title>
+      <para>
+        x is the random generated matrice, y a triangular 4x4 and
+        z=x.y
+      </para>
+      <programlisting role="php">
+<![CDATA[
+use SciPhp\NumPhp as np;
+
+$x = np::tri(4);
+
+$y = np::random()->randint(-10, 11, [4, 4]);
+
+$z = $x->dot($y);
+
+echo "x\n$x\n", "y\n$y\n", "z=x.y\n$z\n";
+]]>
+      </programlisting>
+      &example.outputs;
+      <screen>
+<![CDATA[
+x
+[[1  0  0  0]
+ [1  1  0  0]
+ [1  1  1  0]
+ [1  1  1  1]]
+
+y
+[[-5    -10   -10    7  ]
+ [-10    9    -6     5  ]
+ [ 0     8    -1     10 ]
+ [-2    -8     7     9  ]]
+
+z=x.y
+[[-5    -10   -10    7  ]
+ [-15   -1    -16    12 ]
+ [-15    7    -17    22 ]
+ [-17   -1    -10    31 ]]
+
+]]>
+      </screen>
+    </example>
+
+
+  </para>
+</refsect1>
+
+<!-- see also -->
+<refsect1 role="seealso">
+  &reftitle.seealso;
+  <para>
+    <simplelist>
+      <member><link linkend="ref.ndarray">NdArray &Functions;</link></member>
+      <member><link linkend="ref.numphp">NumPhp &Functions;</link></member>
+      <member><link linkend="ref.random">Random &Functions;</link></member>
+      <member><function>NdArray::dot</function></member>
+      <member><function>Numphp::tri</function></member>
+    </simplelist>
+  </para>
+</refsect1>
+</refentry>

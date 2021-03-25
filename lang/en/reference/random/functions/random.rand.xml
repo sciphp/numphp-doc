@@ -3,7 +3,10 @@
 
 <refnamediv>
   <refname>Random::rand</refname>
-  <refpurpose>Return a sample (or samples) from the “standard normal” distribution.</refpurpose>
+  <refpurpose>Random values in a given shape.</refpurpose>
+  <para>
+    Create an array of the given shape and populate it with random samples from a uniform distribution over [0, 1).
+  </para>
   <para>
     sciphp/numphp>=0.5
   </para>

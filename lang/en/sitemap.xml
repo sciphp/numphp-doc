@@ -112,6 +112,7 @@
     <para>
       <simplelist>
         <member><function>Random::rand</function></member>
+        <member><function>Random::randint</function></member>
         <member><function>Random::randn</function></member>
       </simplelist>
     </para>

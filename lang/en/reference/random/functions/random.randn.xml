@@ -4,6 +4,9 @@
 <refnamediv>
   <refname>Random::randn</refname>
   <refpurpose>Return a sample (or samples) from the “standard normal” distribution.</refpurpose>
+  <para>
+    sciphp/numphp>=0.5
+  </para>
 </refnamediv>
 
 <!-- description -->

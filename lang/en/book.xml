@@ -19,6 +19,8 @@
       <member><link linkend="ref.indexing">Indexing</link></member>
       <member><link linkend="ref.ndarray">NdArray &Functions;</link></member>
       <member><link linkend="ref.numphp">NumPhp &Functions;</link></member>
+      <member><link linkend="ref.linalg">Linear algebra &Functions;</link></member>
+      <member><link linkend="ref.random">Random &Functions;</link></member>
     </simplelist>
 
   </refsect1>

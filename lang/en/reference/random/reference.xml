@@ -10,9 +10,9 @@
       <simplelist>
         <member><function>Random::rand</function></member>
         <member><function>Random::randn</function></member>
+        <member><function>Random::randint</function></member>
       </simplelist>
     </para>
-
 
   </refsect1>
 
